@@ -1,26 +1,30 @@
 <nav class="navbar">
-    <div class="navbar-container">
-      <a routerLink="/" class="home-link">
-        <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+  <div class="navbar-container">
+    <a routerLink="/" class="home-link" title="Home">
+      <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </a>
+
+    <div class="menu-items">
+      <div *ngFor="let item of menuItems; let i = index" class="menu-item" 
+           (mouseenter)="toggleDropdown(item.name)" 
+           (mouseleave)="toggleDropdown(item.name)"
+           [class.special-spacing]="i === 9"> <!-- Apply special spacing to India Payroll -->
+        <span>{{item.name}}</span>
+        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5z"/>
         </svg>
-      </a>
-  
-      <div class="menu-items">
-        <div *ngFor="let item of menuItems" class="menu-item" 
-             (mouseenter)="toggleDropdown(item.name)" 
-             (mouseleave)="toggleDropdown(item.name)">
-          <span>{{item.name}}</span>
-          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M7 10l5 5 5-5z"/>
-          </svg>
-  
-          <div *ngIf="activeDropdown === item.name" class="dropdown-menu">
-            <a *ngFor="let subItem of item.subItems" class="dropdown-item">
-              {{subItem}}
-            </a>
-          </div>
+
+        <div *ngIf="activeDropdown === item.name" class="dropdown-menu">
+          <a *ngFor="let subItem of item.subItems" class="dropdown-item" [routerLink]="['/']">
+            <svg class="dropdown-icon-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+            {{subItem}}
+          </a>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>

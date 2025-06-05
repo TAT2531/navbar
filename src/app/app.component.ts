@@ -8,10 +8,14 @@ import { NavbarComponent } from './navbar/navbar.component';
   standalone: true,
   imports: [CommonModule, RouterModule, NavbarComponent],
   template: `
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
+    <div class="app-container">
+      <app-navbar></app-navbar>
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
   `,
-  styles: []
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'my-app';

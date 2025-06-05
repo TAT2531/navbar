@@ -1,0 +1,13 @@
+/* Disable horizontal scrolling globally */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Main app container */
+  .app-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
