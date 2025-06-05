@@ -1,0 +1,26 @@
+<nav class="navbar">
+    <div class="navbar-container">
+      <a routerLink="/" class="home-link">
+        <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+      </a>
+  
+      <div class="menu-items">
+        <div *ngFor="let item of menuItems" class="menu-item" 
+             (mouseenter)="toggleDropdown(item.name)" 
+             (mouseleave)="toggleDropdown(item.name)">
+          <span>{{item.name}}</span>
+          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+  
+          <div *ngIf="activeDropdown === item.name" class="dropdown-menu">
+            <a *ngFor="let subItem of item.subItems" class="dropdown-item">
+              {{subItem}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
