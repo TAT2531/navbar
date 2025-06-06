@@ -69,14 +69,14 @@
   padding: 0 0.85rem; /* Reduced padding */
   cursor: pointer;
   height: 100%;
-  font-size: 0.85rem; /* Smaller font */
+  font-size: 0.87rem; /* Smaller font */
   font-weight: 500;
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
 .menu-item:nth-child(10) {
-  margin-right: 2.70rem; 
+  margin-right: 2.65rem; 
 }
 
 .menu-item:hover {
