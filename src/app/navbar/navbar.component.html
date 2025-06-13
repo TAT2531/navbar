@@ -6,23 +6,415 @@
       </svg>
     </a>
 
-    <div class="menu-items">
-      <div *ngFor="let item of menuItems; let i = index" class="menu-item" 
-           (mouseenter)="toggleDropdown(item.name)" 
-           (mouseleave)="toggleDropdown(item.name)"
-           [class.special-spacing]="i === 9"> <!-- Apply special spacing to India Payroll -->
-        <span>{{item.name}}</span>
-        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5z"/>
-        </svg>
+    <button class="mobile-menu-button" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
 
-        <div *ngIf="activeDropdown === item.name" class="dropdown-menu">
-          <a *ngFor="let subItem of item.subItems" class="dropdown-item" [routerLink]="['/']">
-            <svg class="dropdown-icon-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-            </svg>
-            {{subItem}}
-          </a>
+    <div class="menu-items" [class.mobile-menu-open]="isMobileMenuOpen">
+      <!-- ESS Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('ESS')" (mouseleave)="toggleDropdown('ESS')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('ESS')">
+          <span>ESS</span>
+        </div>
+        <div *ngIf="activeDropdown === 'ESS'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" routerLink="/ess/my-info">My Info</a>
+              <a class="dropdown-item" routerLink="/ess/timesheet">My Timesheet</a>
+              <a class="dropdown-item" routerLink="/ess/request-leave">Request Leave</a>
+              <a class="dropdown-item" routerLink="/ess/claim-expenses">Claim Expenses</a>
+              <a class="dropdown-item" routerLink="/ess/leave-encashment">Leave Encashment</a>
+              <a class="dropdown-item" routerLink="/ess/employee-ems">Employee EMS</a>
+              <a class="dropdown-item" routerLink="/ess/workforce-directory">WorkForce Directory</a>
+              <a class="dropdown-item" routerLink="/ess/payslips">My Payslips</a>
+              <a class="dropdown-item" routerLink="/ess/ats">ATS</a>
+              <a class="dropdown-item" routerLink="/ess/documents">My Documents</a>
+            </div>           
+            <div class="dropdown-column">
+              <a class="dropdown-item" routerLink="/ess/my-case">My Case</a>
+              <a class="dropdown-item" routerLink="/ess/file-storage">File Storage</a>
+              <a class="dropdown-item" routerLink="/ess/cash-advance">Cash Advance</a>
+              <a class="dropdown-item" routerLink="/ess/employee-directory">Employee Directory</a>
+              <a class="dropdown-item" routerLink="/ess/email-signature">Email Signature</a>
+              <a class="dropdown-item" routerLink="/ess/evaluations">My Evaluations</a>
+              <a class="dropdown-item" routerLink="/ess/programs">My Programs</a>
+              <a class="dropdown-item" routerLink="/ess/messages">My Messages</a>
+              <a class="dropdown-item" routerLink="/ess/google-calendar">Google Calendar</a>
+              <a class="dropdown-item" routerLink="/ess/outlook">Outlook</a>
+            </div>   
+            <div class="dropdown-column">
+              <a class="dropdown-item" routerLink="/ess/bills">Bills</a>
+              <a class="dropdown-item" routerLink="/ess/gmail">Gmail</a>
+              <a class="dropdown-item" routerLink="/ess/message-templates">Message Templates</a>
+              <a class="dropdown-item" routerLink="/ess/sample-forms">Sample Forms</a>
+              <a class="dropdown-item" routerLink="/ess/policies">Policies</a>
+              <a class="dropdown-item" routerLink="/ess/approvals">Approvals</a>
+              <a class="dropdown-item" routerLink="/ess/approve-ems">Approve EMS</a>
+              <a class="dropdown-item" routerLink="/ess/status-report">Status Report</a>
+              <a class="dropdown-item" routerLink="/ess/user-chat">User Chat</a>
+              <a class="dropdown-item" routerLink="/ess/group-mailing">Group Mailing</a>
+            </div>
+            <div class="drowdown-column" id="lastColumn">
+              <a class="dropdown-item" routerLink="/ess/file-conversion">File Conversion</a>
+              <a class="dropdown-item" routerLink="/ess/task-board">Task Board</a>
+              <a class="dropdown-item" routerLink="/ess/asset-request">My Asset Request</a>
+              <a class="dropdown-item" routerLink="/ess/software-request">Request For Software</a>
+              <a class="dropdown-item" routerLink="/ess/digital-sign">Digital Sign</a>
+              <a class="dropdown-item" routerLink="/ess/attendance">My Attendance</a>
+              <a class="dropdown-item" routerLink="/ess/goals">My Goals</a>
+              <a class="dropdown-item" routerLink="/ess/book-cab">Book my Cab</a>
+              <a class="dropdown-item" routerLink="/ess/cafeteria">My Cafeteria</a>
+              <a class="dropdown-item" routerLink="/ess/travel-plan">My Travel Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Manager Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Manager')" (mouseleave)="toggleDropdown('Manager')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Manager')">
+          <span>Manager</span>
+        </div>
+        <div *ngIf="activeDropdown === 'Manager'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-cash-advance')">Approve Cash Advance</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-evaluations')">Approve Evaluations</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-expenses')">Approve Expenses</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-leaves')">Approve Leaves</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-timesheets')">Approve Timesheets</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-wfh')">Approve WFH/Night Shift</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/manager-chat')">Manager Chat</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/my-team')">My Team</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/e-comm-center')">E Comm Center</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/exit-checklist')">Exit Checklist</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/manager/attendance-management')">Attendance Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/team-goals')">Team Goals</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-travel-plan')">Approve Travel Plan</a>
+              <a class="dropdown-item" (click)="navigateTo('/manager/approve-policies')">Approve Policies</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Admin')" (mouseleave)="toggleDropdown('Admin')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Admin')">
+          <span>Admin</span>
+          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </div>
+        <div *ngIf="activeDropdown === 'Admin'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/admin/case-configuration')">Case Configuration</a>
+              <a class="dropdown-item" (click)="navigateTo('/admin/invoices')">Invoices</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/admin/user-management')">Desktop Monitoring</a>
+              <a class="dropdown-item" (click)="navigateTo('/admin/audit-logs')">Payments</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HR Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('HR')" (mouseleave)="toggleDropdown('HR')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('HR')">
+          <span>HR</span>
+          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </div>
+        <div *ngIf="activeDropdown === 'HR'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/hr/employee-management')">Employee Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/case-management')">Case Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/data-exchange')">Data Exchange</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/e-signatures')">E-Signatures</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/digital-sign')">Digital Sign</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/i9-compliance')">I-9 Compliance</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/new-i9-compliance')">New I-9 Compliance</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/job-order-proposal')">Job Order Proposal</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/lca-paf')">LCA and PAF</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/manage-teams')">Manage Teams</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/performance-evaluation')">Performance Evaluation</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/training-programs')">Training Programs</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/hr/background-check')">Background Check</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/e-onboarding')">E-Onboarding</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/job-requisition')">Job Requisition</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/exit-management')">Exit Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/attendance-management')">Attendance Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/covid-app')">CovidApp</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/interviews')">Interviews</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/india-payroll')">India Payroll</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/employee-documents')">Employee Documents</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/file-generation')">File Generation</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/referral')">Referral</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/leave-encashment')">Leave encashment</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/hr/org-management')">Org Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/hike-process')">Hike Process</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/offer-management')">Offer Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/leave-policy')">Leave Policy</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/work-schedule')">Work Schedule</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/approve-wfh')">Approve WFH/Night Shift</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/additional-pay')">Additional Pay Components</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/goal-management')">Goal Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/employee-transport')">Employee Transport Management</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/approve-dinner')">Approve Dinner Request</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/hr-approvals')">HR Approvals</a>
+              <a class="dropdown-item" (click)="navigateTo('/hr/hr-policies')">HR Policies</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Manager Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Account Manager')" (mouseleave)="toggleDropdown('Account Manager')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Account Manager')">
+          <span>Account Manager</span>
+          <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg> -->
+        </div>
+        <div *ngIf="activeDropdown === 'Account Manager'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/clients')">Clients</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/commissions')">Commissions</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/payroll')">Payroll</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/projects')">Projects</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/suppliers')">Suppliers</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/vendors')">Vendors</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/billing')">Billing</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/quickbook-reports')">QuickBook Reports</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/accounts')">Accounts</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/india-payroll')">India Payroll</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/it-documents')">IT Documents</a>
+              <a class="dropdown-item" (click)="navigateTo('/account-manager/view-payroll')">View Payroll</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organization Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Organization')" (mouseleave)="toggleDropdown('Organization')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Organization')">
+          <span>Organization</span>
+          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </div>
+        <div *ngIf="activeDropdown === 'Organization'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/organization/admins-hrs')">Admins & HRs</a>
+              <a class="dropdown-item" (click)="navigateTo('/organization/load-invoice')">Load Invoice Data</a>
+              <a class="dropdown-item" (click)="navigateTo('/organization/properties')">Properties</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/organization/archived-employees')">Archived Employees</a>
+              <a class="dropdown-item" (click)="navigateTo('/organization/my-organization')">My Organization</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IT Admin Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('IT Admin')" (mouseleave)="toggleDropdown('IT Admin')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('IT Admin')">
+          <span>IT Admin</span>
+          <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg> -->
+        </div>
+        <div *ngIf="activeDropdown === 'IT Admin'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+          <div class="dropdown-column">
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/manage-asset-requests')">Manage Asset Requests</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/manage-assets')">Manage Assets</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/manage-software-requests')">Manage Software Requests</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/manage-software-assets')">Manage Software Assets</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-master-report')">Asset Master Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-handover')">Asset Handover & Return Scheduler Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/incident-report')">Incident Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/joining-pipeline')">Joining Pipeline Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-allocation')">Asset Allocation Month Wise Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-history')">Asset History Report</a>
+          </div>
+          <div class="dropdown-column">
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-damage')">Asset Damage or Loss Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-lifecycle')">Asset life Cycle Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-management-dashboard')">Asset Management Dashboard</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/software-management-dashboard')">Software Management Dashboard</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-checklist')">Asset Checklist Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/pre-onboarding')">Pre Onboarding</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/external-associates')">External Associates</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-details')">Asset Details</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/daily-attendance')">Daily Attendance Overview Report</a>
+            <a class="dropdown-item" (click)="navigateTo('/it-admin/asset-file-upload')">Asset File Upload</a>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NonIT Assets Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('NonIT Assets')" (mouseleave)="toggleDropdown('NonIT Assets')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('NonIT Assets')">
+          <span>NonIT Assets</span>
+        </div>
+        <div *ngIf="activeDropdown === 'NonIT Assets'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+             <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/nonit-assets/manage-assets')">NonIT Asset Requests</a>
+             </div>
+             <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/nonit-assets/asset-reports')">Manage NonIT Assets</a>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboards Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Dashboards')" (mouseleave)="toggleDropdown('Dashboards')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Dashboards')">
+          <span>Dashboards</span>
+          <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg> -->
+        </div>
+        <div *ngIf="activeDropdown === 'Dashboards'" class="dropdown-menu menu">
+          <div class="dropdown-column">
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/employee')">Employee DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/hr')">HR DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/hr-recruitment')">Hr Recruitment DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/invoice')">Invoice DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/task-board')">Task Board DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/support-ticket')">Support Ticket DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/payroll')">Payroll DashBoard</a>
+            <a class="dropdown-item" (click)="navigateTo('/dashboards/performance')">Performance DashBoard</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reports Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Reports')" (mouseleave)="toggleDropdown('Reports')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Reports')">
+          <span>Reports</span>
+          <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg> -->
+        </div>
+        <div *ngIf="activeDropdown === 'Reports'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee-calendar')">Employee Calendar Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee')">Employee Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/login-logout')">Login Logout Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee-timesheet')">Employee Timesheet Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/project-timesheet')">Project Timesheet Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/project')">Project Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/probation')">Probation Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/project-management')">Project Management Report</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee-timesheet-history')">Employee Timesheet History Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/bills')">Bills Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/approved-timesheet-history')">Approved Timesheet History Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/call-history')">Call History Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/desktop-monitoring')">Desktop Monitoring Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/daily-desktop-monitoring')">Daily Desktop Monitoring Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee-address')">Employee Address Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/action-event-log')">Action and Event Log</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee-project')">Employee Project Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/gross-margin')">Gross Margin Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/employee-account')">Employee Account Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/timesheet-invoice')">Timesheet - Invoice Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/leave-history')">Leave History Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/project-assignation')">Project Assignation Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/asset')">Asset Report</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/reports/tasks-assignments')">Tasks Assignments Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/vendor-client')">Vendor Client Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/work-from-home')">Work From Home Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/hikes')">Hikes Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/missed-timesheet')">Missed Timesheet Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/hr-checklist')">HR Checklist Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/reports/leaves-overview')">Leaves Overview Report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- India Payroll Reports Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('India Payroll Reports')" (mouseleave)="toggleDropdown('India Payroll Reports')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('India Payroll Reports')">
+          <span>India Payroll Reports</span>
+          <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg> -->
+        </div>
+        <div *ngIf="activeDropdown === 'India Payroll Reports'" class="dropdown-menu menu">
+          <div class="dropdown-columns">
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/timesheet')">India Timesheet Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/lop')">India Payroll LOP Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/leave-encashment')">India Leave Encashment Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/tax')">Tax Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/hike')">Hike Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/reconciliation')">Payroll Reconciliation Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/audit-trail')">Audit Trail Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/summary')">Payroll Summary</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/employee')">Employee Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/full-final')">Full and Final Settlement</a>
+            </div>
+            <div class="dropdown-column">
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/payroll')">India Payroll Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/leaves-overview')">India Leaves Overview Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/employer-pf')">Employer PF Filing Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/esi-monthly')">ESI Monthly Filing Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/earnings-tax')">Earnings And Tax Computations Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/tds-computation')">TDS Computation Report</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/employee-distribution')">Employee Distribution by Salary Template</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/salary-revision')">Salary Revision History</a>
+              <a class="dropdown-item" (click)="navigateTo('/india-payroll/form24q')">Form 24Q</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Immigration Menu -->
+      <div class="menu-item" (mouseenter)="toggleDropdown('Immigration')" (mouseleave)="toggleDropdown('Immigration')">
+        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Immigration')">
+          <span>Immigration</span>
+          <!-- <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg> -->
+        </div>
+        <div *ngIf="activeDropdown === 'Immigration'" class="dropdown-menu menu">
+          <div class="dropdown-row">
+            <a class="dropdown-item" (click)="navigateTo('/immigration/visa-status')">Visa Status</a>
+            <a class="dropdown-item" (click)="navigateTo('/immigration/documentation')">Documentation</a>
+            <a class="dropdown-item" (click)="navigateTo('/immigration/compliance')">Compliance</a>
+          </div>
         </div>
       </div>
     </div>
