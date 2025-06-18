@@ -1,4 +1,4 @@
-/* Base Styles */
+
 .navbar {
   background-color: #1a3e8c;
   color: white;
@@ -6,7 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -23,12 +23,17 @@
   position: relative;
 }
 
-/* Home Link */
+.dropdown-icon {
+  width: 14px;
+  height: 14px;
+  fill: white;
+}
+
 .home-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 0.25rem;
   z-index: 1002;
 }
 
@@ -59,15 +64,15 @@
   display: flex;
   height: 100%;
   align-items: center;
-  gap: 1.0rem;
+  gap:0rem;
   transition: all 0.3s ease;
 }
 
 .menu-item {
   position: relative;
   height: 100%;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.70rem;
+  font-weight: 600;
 }
 
 .menu-item-header {
@@ -83,20 +88,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1a3e8c; /* Dark blue background */
-  min-width: 220px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  z-index: 1001;
-  animation: fadeIn 0.2s ease-out;
-  overflow: hidden;
-}
-
 .menu {
   min-width: auto;
   padding: 0.5rem;
@@ -104,22 +95,17 @@
 
 .dropdown-columns {
   display: flex;
-  /* gap: 1.0rem; */
+  gap: 1.0rem;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding: 0.5rem;
+  max-width: 100%;
 }
 
 .dropdown-column {
   flex: 1;
-  min-width: 300px;
+  min-width: 170px;
 }
 
- .dropdown-category {
-  color: #a0c0ff; /* Lighter blue for category headers */
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem 0;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid #2a4b8f;
-} 
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
@@ -178,24 +164,22 @@
   }
 
   .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    margin-top: 0;
-    display: none;
-    animation: none;
-    min-width: 100%;
-    background-color: #1a3e8c;
-  }
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a3e8c;
+  min-width: 220px;
+  max-width: 90vw; /* Prevent dropdown from exceeding viewport width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  z-index: 1001;
+  animation: fadeIn 0.2s ease-out;
+  overflow: hidden;
+}
 
   .ess-menu {
     min-width: 100%;
     padding: 0.5rem;
-  }
-
-  .dropdown-columns {
-    flex-direction: column;
-    gap: 0;
   }
 
   .active-dropdown .dropdown-menu {
@@ -212,11 +196,6 @@
     background-color: #2a4b8f;
   }
 
-  .dropdown-category {
-    color: #a0c0ff;
-    border-bottom-color: #2a4b8f;
-    margin-top: 1rem;
-  }
 }
 
 /* Special spacing for India Payroll */
@@ -231,3 +210,45 @@ button:focus, a:focus {
   outline: 2px solid #a0c0ff;
   outline-offset: 2px;
 }
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a3e8c;
+  min-width: 220px;
+  max-width: 90vw; /* Prevent dropdown from exceeding viewport width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  z-index: 1001;
+  animation: fadeIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+/* For mobile view */
+@media (max-width: 992px) {
+  .dropdown-menu {
+    max-width: 100%; /* Full width on mobile */
+  }
+  
+  .dropdown-columns {
+    flex-direction: column; /* Stack columns vertically on mobile */
+    overflow-x: visible;
+  }
+}
+
+/* Special case for Reports and India Payroll Reports to prevent horizontal overflow */
+.menu-item:nth-child(10) .dropdown-menu, /* Reports */
+.menu-item:nth-child(11) .dropdown-menu { /* India Payroll Reports */
+  left: auto;
+  right: 0;
+  transform: translateX(0);
+}
+
+/* For very wide screens, you might want to limit the number of columns */
+@media (min-width: 1600px) {
+  .dropdown-columns {
+    flex-wrap: wrap;
+  }
+}
+
