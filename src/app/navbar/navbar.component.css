@@ -1,6 +1,6 @@
 
 .navbar {
-  background-color: #0d2d73;
+  background-color: #1d48a6;
   color: white;
   padding: 0 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -103,7 +103,7 @@
 
 .dropdown-column {
   flex: 1;
-  min-width: 170px;
+  min-width: 177px;
 }
 
 
@@ -216,7 +216,7 @@ button:focus, a:focus {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #103380;
+  background-color: #1d48a6;
   min-width: 220px;
   max-width: 90vw; /* Prevent dropdown from exceeding viewport width */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
