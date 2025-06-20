@@ -1,6 +1,6 @@
 
 .navbar {
-  background-color: #1a3e8c;
+  background-color: #0d2d73;
   color: white;
   padding: 0 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -120,6 +120,7 @@
   transition: all 0.2s;
   border-radius: 4px;
   margin-bottom: 0.25rem;
+  font-size: 12px;
 }
 
 .dropdown-item:hover {
@@ -215,7 +216,7 @@ button:focus, a:focus {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1a3e8c;
+  background-color: #103380;
   min-width: 220px;
   max-width: 90vw; /* Prevent dropdown from exceeding viewport width */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
