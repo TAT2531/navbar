@@ -409,23 +409,11 @@
           </div>
         </div>
       </div>
-
-      <!-- Immigration Menu -->
-      <div class="menu-item" (mouseenter)="toggleDropdown('Immigration')" (mouseleave)="toggleDropdown('Immigration')">
-        <div class="menu-item-header" (click)="isMobileMenuOpen && toggleDropdown('Immigration')">
-          <span>Immigration</span>
-          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M7 10l5 5 5-5z"/>
-          </svg>
-        </div>
-        <div *ngIf="activeDropdown === 'Immigration'" class="dropdown-menu menu">
-          <div class="dropdown-column">
-            <a class="dropdown-item" (click)="navigateTo('/immigration/visa-status')">Visa Status</a>
-            <a class="dropdown-item" (click)="navigateTo('/immigration/documentation')">Documentation</a>
-            <a class="dropdown-item" (click)="navigateTo('/immigration/compliance')">Compliance</a>
-          </div>
-        </div>
-      </div>
     </div>
+
+     <!-- Immigration Menu -->
+        <div class="immigration">
+          <span>Immigration</span>
+        </div>
   </div>
 </nav>
