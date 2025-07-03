@@ -11,83 +11,11 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  // Navbar state
   activeDropdown: string | null = null;
   isMobileMenuOpen = false;
-  
-  // Employee search
-  employeeName: string = '';
-  showDashboard: boolean = false;
-  isLoading: boolean = false;
+  showEmployeeModal = false;
+  employeeName = '';
 
-  // Dashboard data
-  dashboardCategories = [
-    {
-      name: 'HR Dashboard',
-      items: [
-        'Ht Recruitment Dashboard',
-        'Imvoice Dashboard',
-        'Task Board Dashboard',
-        'Support Ticket Dashboard',
-        'Payroll Dashboard',
-        'Performance Dashboard'
-      ]
-    }
-  ];
-
-  currentProjects = [
-    {
-      name: 'Nomadurchan Project',
-      details: [
-        { label: 'Vendor No.', value: 'No Vendor...' },
-        { label: 'Client Name', value: 'No Client' },
-        { label: 'Start Date', value: '2025-03-17' },
-        { label: 'TimeNext Tip', value: 'Weekly' }
-      ]
-    },
-    {
-      name: 'Memelous Limited_State...',
-      details: [
-        { label: 'Max Now I.L..', value: '' }
-      ]
-    }
-  ];
-
-  myPayalips = {
-    title: 'My Payalips',
-    date: 'Feb 17, 2025 - 01:08',
-    expenses: 'My Expenses'
-  };
-
-  keyLabels = Array.from({length: 20}, (_, i) => `1.${i}`);
-
-  constructor(private router: Router) {}
-
-  searchEmployee(): void {
-    if (!this.employeeName.trim()) return;
-    
-    this.isLoading = true;
-    this.showDashboard = false;
-
-    // Simulate API call
-    setTimeout(() => {
-      this.isLoading = false;
-      this.showDashboard = true;
-      
-      // Scroll to dashboard
-      setTimeout(() => {
-        const dashboard = document.querySelector('.dashboard-container');
-        dashboard?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }, 800);
-  }
-
-  closeDashboard(): void {
-    this.showDashboard = false;
-    this.employeeName = '';
-  }
-
-  // Existing navbar methods...
   toggleDropdown(menuName: string): void {
     this.activeDropdown = this.activeDropdown === menuName ? null : menuName;
   }
@@ -107,4 +35,26 @@ export class NavbarComponent {
       this.activeDropdown = null;
     }
   }
+
+  openEmployeeDashboardModal(): void {
+    this.showEmployeeModal = true;
+    this.activeDropdown = null;
+    this.isMobileMenuOpen = false;
+  }
+
+  closeEmployeeDashboardModal(): void {
+    this.showEmployeeModal = false;
+    this.employeeName = '';
+  }
+
+  navigateToEmployeeDashboard(): void {
+    if (this.employeeName.trim()) {
+      this.router.navigate(['/dashboards/employee'], { 
+        queryParams: { name: this.employeeName.trim() } 
+      });
+      this.closeEmployeeDashboardModal();
+    }
+  }
+
+  constructor(private router: Router) {}
 }
