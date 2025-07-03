@@ -85,22 +85,26 @@
   transition: background-color 0.2s;
   min-width: 0;
   padding:0px 10px;
-  font-size: 11.5px;
+  font-size: 12px;
 }
 
 .immigration{
   padding: 0px 5px 0px 90px;
-  font-size: 11.5px;
+  font-size: 12px;
 }
 
+.immigration:hover{
+  cursor: pointer;
+  font-weight: 600;
+}
 .menu-item-header:hover {
-  font-weight: 550;
+  font-weight: 600;
 }
 
 .dropdown-columns {
   display: flex;
   padding: 0px 0px 0px 20px;
-  max-width: 40%;
+  max-width: 90%;
 }
 
 .dropdown-column {
@@ -110,19 +114,20 @@
 
 .dropdown-item {
   display: block;
-  padding: 0.3rem 0.4rem;
+  padding: 2px 5px 5px 10px;
   color: white;
   text-decoration: none;
   transition: all 0.2s;
   border-radius: 4px;
   margin-bottom: 0.25rem;
-  font-size: 10.5px;
+  font-size: 11.5px;
   color: white;
 }
 
 .dropdown-item:hover {
-  background-color: #2a4b8f; /* Slightly darker blue on hover */
-  padding-left: 1.25rem;
+  /* background-color: #2a4b8f;
+  padding-left: 1.25rem; */
+  font-weight: 500;
 }
 
 .dropdown-menu {
@@ -130,8 +135,8 @@
   top: 100%;
   background-color: #0e4091;
   min-width: 220px;
-  max-width: 49vw; 
-  box-shadow: 0 4px 12px rgba(219, 215, 215, 0.886);
+  max-width: 50vw; 
+  box-shadow: 0 0px 5px rgba(219, 215, 215, 0.886);
   border-radius: 4px;
   z-index: 1001;
   animation: fadeIn 0.2s ease-out;
