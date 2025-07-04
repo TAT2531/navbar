@@ -1,0 +1,742 @@
+.employee-dashboard-container {
+  padding: 20px;
+  margin-top: 30px; /* To account for the fixed navbar */
+  /* margin-right: 5px; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+  margin-bottom: 2px;
+}
+
+.dashboard-header h2 {
+  color: #0e4091;
+  font-size: 24px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.dashboard-box {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.box-header {
+  background-color: white;
+  color: #3768b7;
+  padding: 10px 15px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.box-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.box-content {
+  padding: 15px;
+  background-color: white;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+
+.key-labels {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.labels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.label-item {
+  padding: 5px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Profile Card Styles */
+
+.box-profile .box-content {
+  padding: 15px;
+}
+
+.profile-header h4 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.profile-content {
+  display: flex;
+  gap: 30px;
+}
+
+.contact-section {
+  flex: 1;
+}
+
+.leave-section {
+  flex: 1;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 10px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.contact-info p strong{
+  font-size: 11px;
+}
+
+.resume-upload {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-btn {
+  background-color: #3768b7;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #2a56a0;
+}
+
+.leave-section h5 {
+  margin: 0 0 10px 0;
+  font-size: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.leave-table th {
+  text-align: left;
+  padding: 6px 8px;
+  background-color: #f9f9f9;
+  font-weight: 500;
+  color: #555;
+}
+
+.leave-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.leave-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .leave-table {
+    font-size: 12px;
+  }
+  
+  .contact-info p {
+    font-size: 12px;
+  }
+  
+  .profile-header h4 {
+    font-size: 15px;
+  }
+}
+
+/* Emergency Contact Card Styles */
+
+.emergency-contact-card .box-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #2a56a0;
+  font-weight: 600;
+}
+
+.emergency-contact-card .box-content {
+  padding: 15px;
+}
+
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-size: 10px;
+  color: #333;
+  padding: 4px 0;
+  min-height: 20px;
+  border-bottom: 1px dashed #eee;
+}
+
+.section-header {
+  margin: 15px 0 10px 0;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  grid-column: span 2;
+}
+
+.section-header h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #2a56a0;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-row.full-width {
+    grid-column: span 1;
+  }
+}
+
+
+/* Documents Card Styles */
+.box-documents .box-content {
+  padding: 10px 0;
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.document-item:hover {
+  background-color: #f8f9fa;
+}
+
+.document-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.document-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.document-name {
+  flex: 1;
+  font-size: 13px;
+  color: #333;
+}
+
+.document-actions {
+  margin-left: 10px;
+}
+
+.download-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.download-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Different icon for passport */
+.document-item:nth-child(4) .document-icon svg {
+  color: #e67e22;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .document-name {
+    font-size: 12px;
+  }
+  
+  .document-icon {
+    margin-right: 8px;
+  }
+}
+
+/* my projects */
+
+.projects-container {
+  display: flex;
+  gap: 20px;
+}
+
+.projects-section {
+  flex: 1;
+}
+
+.projects-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.projects-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+.projects-list li:first-child {
+  background-color: #3768b7;
+  color: white;
+  font-weight: bold;
+}
+
+.projects-list li:last-child {
+  border-bottom: none;
+}
+
+.project-details {
+  flex: 1;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.project-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.project-info {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.project-info tr {
+  border-bottom: 1px solid #eee;
+}
+
+.project-info tr:last-child {
+  border-bottom: none;
+}
+
+.project-info td {
+  padding: 6px 0;
+  font-size: 11px;
+}
+
+.project-info .label {
+  color: #666;
+  width: 45%;
+  vertical-align: top;
+}
+
+
+
+/* My Actions Container */
+
+.box-content {
+  padding: 16px;
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Pie Chart Container */
+.pie-chart-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Pie Chart Styles */
+.pie-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  background: rgb(229, 69, 122);
+}
+
+.pie-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  clip-path: polygon(50% 50%, 50% 0, 0 0);
+  transform: rotate(0deg);
+}
+
+/* Segment Colors */
+.segment-tasks { background: #1f62a9; }
+.segment-timesheet { background: #ba7a3a; transform: rotate(0deg); }
+.segment-programs { background: #d42f32; transform: rotate(calc(73% * 3.6deg)); }
+.segment-evaluation { background: #cfae0a; transform: rotate(calc(74% * 3.6deg)); }
+.segment-cases { background: #2ef413; transform: rotate(calc(74% * 3.6deg)); }
+
+/* White Center Circle */
+.pie-center {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: white;
+  border-radius: 50%;
+  top: 20%;
+  left: 20%;
+  z-index: 2;
+}
+
+/* Actions List */
+.actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-icon {
+  font-size: 18px;
+}
+
+.action-label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.action-count {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pie-chart-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pie-chart {
+    margin-bottom: 20px;
+  }
+}
+
+/* Organizational Assignments Styles */
+
+.box-org .box-content {
+  padding:10px 102px 10px 0px;
+}
+
+.org-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  font-size: 14px;
+  padding: 0px 39px 0px 55px;
+
+}
+
+.org-label {
+  color: #666;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.org-value {
+  color: #333;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .org-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .org-value {
+    margin-bottom: 10px;
+  }
+}
+
+/* My Payslips */
+
+.payslip-item, .no-data span{
+  color: #2a56a0;
+  font-weight: 500;
+  padding: 60px;
+}
+
+
+/* My Expenses Styles */
+
+.box-expenses .box-content {
+  padding: 0;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-date {
+  flex: 1;
+  font-size: 13px;
+  color: #333;
+}
+
+.expense-status {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+.expense-status.saved {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.expense-status.archived {
+  background-color: #f5f5f5;
+  color: #616161;
+}
+
+.expense-status.approved {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.expense-icon {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #d32f2f;
+  font-size: 14px;
+}
+
+/* For actual PDF icons, you would use: */
+.expense-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='%231976D2'%3E%3Cpath d='M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z'/%3E%3C/svg%3E");  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .expense-item {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .expense-status {
+    margin: 0;
+    order: 3;
+    width: 100%;
+  }
+}
+
+
+/* My Benefits & Tax Styles */
+
+.box-benefits .box-content {
+  padding: 16px;
+}
+
+/* Benefit Items */
+.benefit-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.benefit-item:last-child {
+  border-bottom: none;
+}
+
+.benefit-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.benefit-icon {
+  font-size: 18px;
+}
+
+.benefit-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.benefit-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.benefit-status {
+  display: flex;
+  gap: 8px;
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.status-badge.processed {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-badge.approved {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.status-badge.view {
+  background-color: #f5f5f5;
+  color: #616161;
+  border: 1px solid #e0e0e0;
+}
+
+.status-badge.tds {
+  background-color: #fff8e1;
+  color: #ff8f00;
+  border: 1px solid #ffe0b2;
+}
+
+/* Document Item */
+.document-item {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .benefit-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .benefit-status {
+    align-self: flex-end;
+  }
+}

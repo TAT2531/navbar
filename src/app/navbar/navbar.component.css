@@ -271,11 +271,6 @@ button:focus, a:focus {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* .input-group {
-  margin-bottom: 10px;
-  padding: 20px;
-} */
-
 .input-group span{
   background-color: #3768b7;
   color: white;
