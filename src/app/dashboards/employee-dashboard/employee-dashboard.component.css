@@ -650,12 +650,12 @@
 /* My Benefits & Tax Styles */
 
 .box-benefits .box-content {
-  padding: 16px;
+  padding: 8px;
 }
 
 /* Benefit Items */
 .benefit-item {
-  padding: 12px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #f5f5f5;
 }
 
@@ -678,13 +678,14 @@
 
 .benefit-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
+  top: 0;
   align-items: center;
 }
 
 .benefit-date {
   font-size: 12px;
-  color: #666;
+  color:1px solid #666;
 }
 
 .benefit-status {
@@ -702,23 +703,27 @@
 .status-badge.processed {
   background-color: #e3f2fd;
   color: #1976d2;
+  margin-left: 25px;
 }
 
 .status-badge.approved {
   background-color: #e8f5e9;
   color: #388e3c;
+  margin-right:70px;
 }
 
 .status-badge.view {
   background-color: #f5f5f5;
   color: #616161;
   border: 1px solid #e0e0e0;
+  margin-left: 30px;
 }
 
 .status-badge.tds {
   background-color: #fff8e1;
   color: #ff8f00;
   border: 1px solid #ffe0b2;
+  margin: 0px 50px;
 }
 
 /* Document Item */
