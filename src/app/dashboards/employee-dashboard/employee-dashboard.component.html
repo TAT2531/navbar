@@ -2,94 +2,134 @@
   <div class="dashboard-grid">
     <!-- My Profile -->
     <div class="dashboard-box box-profile">
-  <div class="box-header">
-    <h3>My Profile</h3>
-  </div>
-  <div class="box-content">
-    <div class="profile-header">
-      <h4>MCL100000 | Full Time<br>Employee<br>Accountant</h4>
-    </div>
-    
-    <div class="profile-content">
-      <div class="contact-section">
-        <div class="contact-info">
-          <p><strong>Mobile:</strong> +91 456-787-6556</p>
-          <p><strong>Email:</strong> maxygmail.com</p>
-          <p><strong>Address:</strong> 25th street,Kommram</p>
+      <div class="box-header">
+        <h3>My Profile</h3>
+      </div>
+      <div class="box-content card-1">
+
+        <div class="left">
+
+          <div class="profile-header">
+            <div class="photo"></div>
+            <div class="role">
+              <h4>MCL100000 | Full Time<br>Employee</h4>
+            <h4 style="color:crimson;">Accountant</h4>
+            </div>
+          </div>
+
+          <div class="contact-section">
+            <div class="contact-info">
+              <p><strong>Mobile:</strong> +91 456-787-6556</p>
+              <p><strong>Email:</strong> maxygmail.com</p>
+              <p><strong>Address:</strong> 25th street,Kommram</p>
+            </div>
+            <div class="documents">
+              <div class="resume-upload">
+                <span>Resume: <img src="assets/icons/pdf.svg" alt="PDF Icon" width="10"></span>
+                <button class="upload-btn">Upload</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="documents">
-          <div class="resume-upload">
-            <span>Resume: </span>
-            <button class="upload-btn">Upload</button>
+
+        <div class="right">
+          <div class="profile-content">
+            <div class="leave-section">
+              <table class="leave-table">
+                <thead>
+                  <tr>
+                    <th>Leave Type</th>
+                    <th>Quota</th>
+                    <th>Utilized</th>
+                    <th>Balance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align:left">Sick</td>
+                    <td>12</td>
+                    <td>0</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left">Casual</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left">Emergency</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left">Bereavement</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left; border-bottom: 1px solid #877373">Sick</td>
+                    <td style=" border-bottom: 1px solid #877373">1</td>
+                    <td style=" border-bottom: 1px solid #877373">14</td>
+                    <td style=" border-bottom: 1px solid #877373">-13</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left">Night Shift</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="leave-section">
-        <h5>Leave Type</h5>
-        <table class="leave-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Quota</th>
-              <th>Utilized</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Sick</td><td>12</td><td>0</td><td>12</td></tr>
-            <tr><td>Casual</td><td>5</td><td>2</td><td>3</td></tr>
-            <tr><td>Emergency</td><td>2</td><td>0</td><td>2</td></tr>
-            <tr><td>Bereavement</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Sick</td><td>1</td><td>14</td><td>-13</td></tr>
-            <tr><td>Night Shift</td><td>5</td><td>5</td><td>0</td></tr>
-          </tbody>
-        </table>
-      </div>
     </div>
-  </div>
-</div>
 
     <!-- Emergency Contact -->
     <div class="dashboard-box emergency-contact-card">
-        <div class="box-header">
-          <h3>Contact Details</h3>
-        </div>
-        <div class="box-content">
-          <div class="contact-details-grid">
-            <!-- Personal Details Section -->
-            <div class="detail-row">
-              <span class="detail-label">DOB</span>
-              <span class="detail-value">Jan 1, 1960</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Blood Group</span>
-              <span class="detail-value">A+</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Start Date</span>
-              <span class="detail-value">Jan 3, 2022</span>
-            </div>
-            <div class="detail-row">
-              <span class="detail-label">Home Address</span>
-              <span class="detail-value">25th street,Kurnool,Andhra Pradesh</span>
-            </div>
+      <div class="box-header">
+        <h3>Contact Details</h3>
+      </div>
+      <div class="box-content">
+        <div class="contact-details-grid">
+          <!-- Personal Details Section -->
+          <div class="detail-row" style="padding: 0px 10px;">
+            <span class="detail-label">DOB</span>
+            <span class="detail-value">Jan 1, 1960</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Blood Group</span>
+            <span class="detail-value">A+</span>
+          </div>
+          <div class="detail-row" style="padding: 0px 10px;">
+            <span class="detail-label">Start Date</span>
+            <span class="detail-value">Jan 3, 2022</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Home Address</span>
+            <span class="detail-value">25th street,Kurnool,Andhra Pradesh</span>
+          </div>
 
-            <!-- Emergency Contact Section -->
-            <div class="section-header full-width">
-              <h4>Emergency Contact Details</h4>
-            </div>
+          <!-- Emergency Contact Section -->
+          <div class="section-header full-width">
+            <h4 style="padding: 0px 12px;">Emergency Contact Details</h4>
+          </div>
+          <div class="contact">
             <div class="detail-row">
               <span class="detail-label">Contact Name</span>
               <span class="detail-value">Charan</span>
             </div>
             <div class="detail-row">
-              <span class="detail-label">Relation</span>
-              <span class="detail-value"></span>
-            </div>
-            <div class="detail-row">
               <span class="detail-label">Mobile</span>
               <span class="detail-value">+1 345-243-4514</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Relation</span>
+              <span class="detail-value"></span>
             </div>
             <div class="detail-row">
               <span class="detail-label">Email</span>
@@ -97,202 +137,200 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
 
     <!-- Documents Card -->
     <div class="dashboard-box box-documents">
-  <div class="box-header">
-    <h3>My Documents</h3>
-  </div>
-  <div class="box-content">
-    <div class="documents-list">
-      <div class="document-item">
-        <div class="document-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
-            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-          </svg>
-        </div>
-        <div class="document-name">Onboarding New Onboarding Document</div>
-        <div class="document-actions">
-          <button class="download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-          </button>
-        </div>
+      <div class="box-header">
+        <h3>My Documents</h3>
       </div>
-      
-      <div class="document-item">
-        <div class="document-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
-            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-          </svg>
-        </div>
-        <div class="document-name">Onboarding New Document</div>
-        <div class="document-actions">
-          <button class="download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-      
-      <div class="document-item">
-        <div class="document-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
-            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-          </svg>
-        </div>
-        <div class="document-name">Onboarding Policy</div>
-        <div class="document-actions">
-          <button class="download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-      
-      <div class="document-item">
-        <div class="document-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
-            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-          </svg>
-        </div>
-        <div class="document-name">Immigration Personal Passport</div>
-        <div class="document-actions">
-          <button class="download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#666">
-              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-          </button>
+      <div class="box-content">
+        <div class="documents-list">
+          <div class="document-item">
+            <div class="document-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+              </svg>
+            </div>
+            <div class="document-name">Onboarding New Onboarding Document</div>
+            <div class="document-actions">
+              <button class="download-btn">
+                <img src="assets/icons/pdf.svg" alt="PDF Icon" width="10">
+              </button>
+            </div>
+          </div>
+
+          <div class="document-item">
+            <div class="document-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+              </svg>
+            </div>
+            <div class="document-name">Onboarding New Document</div>
+            <div class="document-actions">
+              <button class="download-btn">
+                <img src="assets/icons/pdf.svg" alt="PDF Icon" width="10">
+                <div class="pdf-icon"></div>
+              </button>
+            </div>
+          </div>
+
+          <div class="document-item">
+            <div class="document-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+              </svg>
+            </div>
+            <div class="document-name">Onboarding Policy</div>
+            <div class="document-actions">
+              <button class="download-btn">
+                <img src="assets/icons/pdf.svg" alt="PDF Icon" width="10">
+              </button>
+            </div>
+          </div>
+
+          <div class="document-item">
+            <div class="document-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3768b7">
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+              </svg>
+            </div>
+            <div class="document-name">Immigration Personal Passport</div>
+            <div class="document-actions">
+              <button class="download-btn">
+                <img src="assets/icons/pdf.svg" alt="PDF Icon" width="10">
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
     <!-- My Projects -->
     <div class="dashboard-box box-projects">
-  <div class="box-header">
-    <h3>My Projects</h3>
-  </div>
-  <div class="box-content">
-    <div class="projects-container">
-      <div class="projects-section">
-        <h4>Current Projects</h4>
-        <ul class="projects-list">
-          <li>Bench Project</li>
-          <li>Normalandhan Project</li>
-          <li>Mccvarty private Limited</li>
-          <li>Sevya Project</li>
-          <li>Menendez Limited_Sirian...</li>
-          <li>L&T</li>
-        </ul>
+      <div class="box-header">
+        <h3>My Projects</h3>
       </div>
-      
-      <div class="project-details">
-        <div class="project-title">Bench Project</div>
-        <table class="project-info">
-          <tr>
-            <td class="label">Vendor Name:</td>
-            <td>No Vendor</td>
-          </tr>
-          <tr>
-            <td class="label">Client Name:</td>
-            <td>No Client</td>
-          </tr>
-          <tr>
-            <td class="label">Start Date:</td>
-            <td>2025-02-17</td>
-          </tr>
-          <tr>
-            <td class="label">End Date:</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="label">Timesheet Type:</td>
-            <td>Weekly</td>
-          </tr>
-          <tr>
-            <td class="label">Max Hours Limit:</td>
-            <td></td>
-          </tr>
-        </table>
+      <div class="box-content">
+        <div class="projects-container">
+          <div class="projects-section">
+            <h4>Current Projects</h4>
+            <ul class="projects-list">
+              <li>Bench Project</li>
+              <li>Normalandhan Project</li>
+              <li>Mccvarty private Limited</li>
+              <li>Sevya Project</li>
+              <li>Menendez Limited_Sirian...</li>
+              <li>L&T</li>
+            </ul>
+          </div>
+
+          <div class="project-details">
+            <div class="project-title">Bench Project</div>
+            <table class="project-info">
+              <tr>
+                <td class="label">Vendor Name:</td>
+                <td>No Vendor</td>
+              </tr>
+              <tr>
+                <td class="label">Client Name:</td>
+                <td>No Client</td>
+              </tr>
+              <tr>
+                <td class="label">Start Date:</td>
+                <td>2025-02-17</td>
+              </tr>
+              <tr>
+                <td class="label">End Date:</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="label">Timesheet Type:</td>
+                <td>Weekly</td>
+              </tr>
+              <tr>
+                <td class="label">Max Hours Limit:</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
     <!-- My Actions with Pie Chart -->
     <div class="dashboard-box box-actions">
-  <div class="box-header">
-    <h3>My Actions</h3>
-  </div>
-  <div class="box-content">
-    <div class="actions-container">
-      <div class="pie-chart-container">
-        <div class="pie-chart">
-          <div class="pie-segment segment-tasks" style="--percentage: 0%;"></div>
-          <div class="pie-segment segment-timesheet" style="--percentage: 73%;"></div>
-          <div class="pie-segment segment-programs" style="--percentage: 1%;"></div>
-          <div class="pie-segment segment-evaluation" style="--percentage: 0%;"></div>
-          <div class="pie-segment segment-cases" style="--percentage: 0%;"></div>
+      <div class="box-header">
+        <h3>My Actions</h3>
+      </div>
+      <div class="box-content">
+        <div class="actions-container">
+          <div class="pie-chart-container">
+            <div class="pie-chart">
+              <div class="pie-segment segment-tasks" style="--percentage: 0%;"></div>
+              <div class="pie-segment segment-timesheet" style="--percentage: 73%;"></div>
+              <div class="pie-segment segment-programs" style="--percentage: 1%;"></div>
+              <div class="pie-segment segment-evaluation" style="--percentage: 0%;"></div>
+              <div class="pie-segment segment-cases" style="--percentage: 0%;"></div>
+            </div>
+          </div>
+          <div class="actions-list-container">
+            <ul class="actions-list">
+              <li>
+                <input type="checkbox" id="tasks" disabled>
+                <label for="tasks">Tasks <span>0</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="timesheet" checked disabled>
+                <label for="timesheet">Timesheet <span>73</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="programs" disabled>
+                <label for="programs">Programs <span>1</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="evaluation" disabled>
+                <label for="evaluation">Evaluation <span>0</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="cases" disabled>
+                <label for="cases">My Cases <span>0</span></label>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="actions-list-container">
-        <ul class="actions-list">
-          <li>
-            <input type="checkbox" id="tasks" disabled>
-            <label for="tasks">Tasks <span>0</span></label>
-          </li>
-          <li>
-            <input type="checkbox" id="timesheet" checked disabled>
-            <label for="timesheet">Timesheet <span>73</span></label>
-          </li>
-          <li>
-            <input type="checkbox" id="programs" disabled>
-            <label for="programs">Programs <span>1</span></label>
-          </li>
-          <li>
-            <input type="checkbox" id="evaluation" disabled>
-            <label for="evaluation">Evaluation <span>0</span></label>
-          </li>
-          <li>
-            <input type="checkbox" id="cases" disabled>
-            <label for="cases">My Cases <span>0</span></label>
-          </li>
-        </ul>
-      </div>
     </div>
-  </div>
-</div>
 
     <!-- Organizational Assignments -->
     <div class="dashboard-box box-org">
-  <div class="box-header">
-    <h3>Organizational Assignments</h3>
-  </div>
-  <div class="box-content">
-    <div class="org-grid">
-      <div class="org-label">Company Code</div>
-      <div class="org-value">MCLL002</div>
-      
-      <div class="org-label">Personnel Area</div>
-      <div class="org-value">OOISHA</div>
-      
-      <div class="org-label">Personnel Sub Area</div>
-      <div class="org-value">Balangir</div>
-      
-      <div class="org-label">Cost Center</div>
-      <div class="org-value">0</div>
-      
-      <div class="org-label">Department</div>
-      <div class="org-value">Search Dept</div>
+      <div class="box-header">
+        <h3>Organizational Assignments</h3>
+      </div>
+      <div class="box-content">
+        <div class="org-grid">
+          <div class="org-label">Company Code</div>
+          <div class="org-value">MCLL002</div>
+
+          <div class="org-label">Personnel Area</div>
+          <div class="org-value">OOISHA</div>
+
+          <div class="org-label">Personnel Sub Area</div>
+          <div class="org-value">Balangir</div>
+
+          <div class="org-label">Cost Center</div>
+          <div class="org-value">0</div>
+
+          <div class="org-label">Department</div>
+          <div class="org-value">Search Dept</div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- My Payslips -->
     <div class="dashboard-box box-payslips">
@@ -307,97 +345,98 @@
     </div>
 
     <!-- My Expenses -->
-   <div class="dashboard-box box-expenses">
-  <div class="box-header">
-    <h3>My Expenses</h3>
-  </div>
-  <div class="box-content">
-    <div class="expense-item">
-      <div class="expense-date">Feb 17, 2025 - 0 HR</div>
-      <div class="expense-status saved">Saved</div>
-      <div class="expense-icon"></div>
+    <div class="dashboard-box box-expenses">
+      <div class="box-header">
+        <h3>My Expenses</h3>
+      </div>
+      <div class="box-content">
+        <div class="expense-item">
+          <div class="expense-date">Feb 17, 2025 - 0 INR</div>
+          <div class="expense-status saved">Saved</div>
+          <div class="expense-icon"></div>
+        </div>
+        <div class="expense-item">
+          <div class="expense-date">Feb 17, 2025 - 0 INR</div>
+          <div class="expense-status archived">Archived</div>
+          <div class="expense-icon"></div>
+        </div>
+        <div class="expense-item">
+          <div class="expense-date">Feb 12, 2025 - 0 INR</div>
+          <div class="expense-status approved">Approved</div>
+          <div class="expense-icon"></div>
+        </div>
+        <div class="expense-item">
+          <div class="expense-date">Feb 12, 2025 - 0 INR</div>
+          <div class="expense-status approved">Approved</div>
+          <div class="expense-icon"></div>
+        </div>
+      </div>
     </div>
-    <div class="expense-item">
-      <div class="expense-date">Feb 17, 2025 - 0 HR</div>
-      <div class="expense-status archived">Archived</div>
-      <div class="expense-icon"></div>
-    </div>
-    <div class="expense-item">
-      <div class="expense-date">Feb 12, 2025 - 0 HR</div>
-      <div class="expense-status approved">Approved</div>
-      <div class="expense-icon"></div>
-    </div>
-    <div class="expense-item">
-      <div class="expense-date">Feb 12, 2025 - 0 HR</div>
-      <div class="expense-status approved">Approved</div>
-      <div class="expense-icon"></div>
-    </div>
-  </div>
-</div>
 
     <!-- My Benefits & Tax -->
-   <div class="dashboard-box box-benefits">
-  <div class="box-header">
-    <h3>My Benefits & Tax</h3>
-  </div>
-  <div class="box-content">
-    <!-- Cash Advance 1 -->
-    <div class="benefit-item">
-      <div class="benefit-details">
-        
-        <span>Cash Advance - INR 500000</span>
+    <div class="dashboard-box box-benefits">
+      <div class="box-header">
+        <h3>My Benefits & Tax</h3>
       </div>
-      <div class="benefit-footer">
-        <span class="benefit-date">Sep 12, 2024</span>
-        <div class="benefit-status">
-          <span class="status-badge processed">Processed</span>
-          <span class="status-badge view">View</span>
-        </div>
-      </div>
-    </div>
+      <div class="box-content">
+        <!-- Cash Advance 1 -->
+        <div class="benefit-item">
+          <div class="benefit-details">
 
-    <!-- Cash Advance 2 -->
-    <div class="benefit-item">
-      <div class="benefit-details">
-        
-        <span>Cash Advance - INR 1200</span>
-      </div>
-      <div class="benefit-footer">
-        <span class="benefit-date">Sep 13, 2024</span>
-        <div class="benefit-status">
-          <span class="status-badge approved">Approved</span>
+            <span>Cash Advance - INR 500000</span>
+          </div>
+          <div class="benefit-footer">
+            <span class="benefit-date">Sep 12, 2024</span>
+            <div class="benefit-status">
+              <span class="status-badge processed">Processed</span>
+              <span class="status-badge view">View</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Cash Advance 3 -->
-    <div class="benefit-item">
-      <div class="benefit-details">
-        <span>Cash Advance - INR 62000</span>
-      </div>
-      <div class="benefit-footer">
-        <span class="benefit-date">Sep 12, 2024</span>
-        <div class="benefit-status">
-          <span class="status-badge approved">Approved</span>
-        </div>
-      </div>
-    </div>
+        <!-- Cash Advance 2 -->
+        <div class="benefit-item">
+          <div class="benefit-details">
 
-    <!-- IT Document -->
-    <div class="benefit-item document-item">
-      <div class="benefit-details">
-        <span>IT Document - New IT Document</span>
-      </div>
-      <div class="benefit-footer">
-        <div class="benefit-status">
-          <span class="status-badge tds">TDS</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="#1976D2">
-  <path d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"/>
-</svg>
+            <span>Cash Advance - INR 1200</span>
+          </div>
+          <div class="benefit-footer">
+            <span class="benefit-date">Sep 13, 2024</span>
+            <div class="benefit-status">
+              <span class="status-badge approved">Approved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cash Advance 3 -->
+        <div class="benefit-item">
+          <div class="benefit-details">
+            <span>Cash Advance - INR 62000</span>
+          </div>
+          <div class="benefit-footer">
+            <span class="benefit-date">Sep 12, 2024</span>
+            <div class="benefit-status">
+              <span class="status-badge approved">Approved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IT Document -->
+        <div class="benefit-item document-item">
+          <div class="benefit-details">
+            <span>IT Document - New IT Document</span>
+          </div>
+          <div class="benefit-footer">
+            <div class="benefit-status">
+              <span class="status-badge tds">TDS</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="#1976D2">
+                <path
+                  d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
   </div>
 </div>

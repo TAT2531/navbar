@@ -1,6 +1,6 @@
 .employee-dashboard-container {
   padding: 20px;
-  margin-top: 30px; /* To account for the fixed navbar */
+  margin-top: 30px;
   /* margin-right: 5px; */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -20,10 +20,21 @@
   gap: 5px;
 }
 
+/* .pdf-icon {
+  mask: url('/assets/icons/pdf.svg') no-repeat center;
+  -webkit-mask: url('/assets/icons/pdf.svg') no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor; Will use parent's text color */
+  /* display: inline-block;
+} */
+
 .dashboard-box {
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .box-header {
@@ -64,7 +75,7 @@
 
 .label-item {
   padding: 5px;
-  background-color: #f5f5f5;
+  background-color: #e7e5e5;
   border-radius: 3px;
   font-size: 11px;
   text-align: center;
@@ -84,15 +95,37 @@
 }
 
 
-/* Profile Card Styles */
+/*My Profile Card Styles */
+.card-1 {
+  display: flex;
+  justify-content: end;
+}
 
+.card-1 .left{
+  width: 200px;
+}
+
+.right{
+  width: 45%;
+  padding: 10px 0 0 10px;
+}
+
+.profile-header{
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+.profile-content{
+  margin:0px 5px;
+  background-color: #f0efef;
+  border-radius: 3px;
+}
 .box-profile .box-content {
-  padding: 15px;
+  padding: 0px;
 }
 
 .profile-header h4 {
   margin: 0 0 15px 0;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   font-weight: 500;
   line-height: 1.4;
@@ -112,14 +145,14 @@
 }
 
 .contact-info p {
-  margin: 8px 0;
-  font-size: 10px;
-  color: #555;
+  margin: 4px 0;
+  font-size: 11px;
+  color: #0e0d0d;
   line-height: 1.4;
 }
 
-.contact-info p strong{
-  font-size: 11px;
+.contact-info p strong {
+  font-size: 12px;
 }
 
 .resume-upload {
@@ -143,30 +176,24 @@
   background-color: #2a56a0;
 }
 
-.leave-section h5 {
-  margin: 0 0 10px 0;
-  font-size: 10px;
-  color: #333;
-  font-weight: 500;
-}
-
 .leave-table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   font-size: 10px;
 }
 
 .leave-table th {
   text-align: left;
-  padding: 6px 8px;
+  padding: 6px 2px;
   background-color: #f9f9f9;
   font-weight: 500;
-  color: #555;
+  color:#1976d2;
 }
 
 .leave-table td {
-  padding: 6px 8px;
-  border-bottom: 1px solid #f0f0f0;
+  text-align:center;
+  padding: 6px 3px;
+  border-bottom:#d2d0d0;
 }
 
 .leave-table tr:last-child td {
@@ -179,15 +206,15 @@
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .leave-table {
     font-size: 12px;
   }
-  
+
   .contact-info p {
     font-size: 12px;
   }
-  
+
   .profile-header h4 {
     font-size: 15px;
   }
@@ -195,21 +222,14 @@
 
 /* Emergency Contact Card Styles */
 
-.emergency-contact-card .box-header h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #2a56a0;
-  font-weight: 600;
-}
-
 .emergency-contact-card .box-content {
-  padding: 15px;
+  padding: 0px;
 }
 
 .contact-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 0px;
 }
 
 .detail-row {
@@ -219,30 +239,39 @@
 }
 
 .detail-label {
-  font-size: 12px;
-  color: #666;
+  font-size: 16px;
+  color: #474747;
   font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 .detail-value {
-  font-size: 10px;
-  color: #333;
-  padding: 4px 0;
-  min-height: 20px;
-  border-bottom: 1px dashed #eee;
+  font-size: 12px;
+  color: #3a3939;
+  padding: 2px 0;
+  min-height: 5px;
+  /* border-bottom: 1px dashed #eee; */
+}
+
+.contact{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #edeaea;
+  border-radius: 3px;
+  grid-column: span 2;
+  padding:5px 0px 0px 15px;
 }
 
 .section-header {
-  margin: 15px 0 10px 0;
+  margin: 1px 0 10px 0;
   padding-top: 10px;
-  border-top: 1px solid #f0f0f0;
+  /* border-top: 1px solid #f0f0f0; */
   grid-column: span 2;
 }
 
 .section-header h4 {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #2a56a0;
   font-weight: 600;
 }
@@ -252,7 +281,7 @@
   .contact-details-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .detail-row.full-width {
     grid-column: span 1;
   }
@@ -267,13 +296,13 @@
 .documents-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0px;
 }
 
 .document-item {
   display: flex;
   align-items: center;
-  padding: 10px 15px;
+  padding: 0px 15px;
   border-bottom: 1px solid #f0f0f0;
   transition: background-color 0.2s;
 }
@@ -324,17 +353,12 @@
   height: 18px;
 }
 
-/* Different icon for passport */
-.document-item:nth-child(4) .document-icon svg {
-  color: #e67e22;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .document-name {
     font-size: 12px;
   }
-  
+
   .document-icon {
     margin-right: 8px;
   }
@@ -344,7 +368,7 @@
 
 .projects-container {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .projects-section {
@@ -363,12 +387,12 @@
   margin: 0;
   border: 1px solid #eee;
   border-radius: 4px;
-  max-height: 300px;
+  max-height: 199px;
   overflow-y: auto;
 }
 
 .projects-list li {
-  padding: 8px 12px;
+  padding: 5px 12px;
   border-bottom: 1px solid #eee;
   font-size: 12px;
   color: #333;
@@ -389,14 +413,14 @@
   flex: 1;
   border: 1px solid #eee;
   border-radius: 4px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .project-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 14px;
-  padding-bottom: 8px;
+  padding-bottom: 0px;
   border-bottom: 1px solid #eee;
 }
 
@@ -465,11 +489,29 @@
 }
 
 /* Segment Colors */
-.segment-tasks { background: #1f62a9; }
-.segment-timesheet { background: #ba7a3a; transform: rotate(0deg); }
-.segment-programs { background: #d42f32; transform: rotate(calc(73% * 3.6deg)); }
-.segment-evaluation { background: #cfae0a; transform: rotate(calc(74% * 3.6deg)); }
-.segment-cases { background: #2ef413; transform: rotate(calc(74% * 3.6deg)); }
+.segment-tasks {
+  background: #1f62a9;
+}
+
+.segment-timesheet {
+  background: #ba7a3a;
+  transform: rotate(0deg);
+}
+
+.segment-programs {
+  background: #d42f32;
+  transform: rotate(calc(73% * 3.6deg));
+}
+
+.segment-evaluation {
+  background: #cfae0a;
+  transform: rotate(calc(74% * 3.6deg));
+}
+
+.segment-cases {
+  background: #2ef413;
+  transform: rotate(calc(74% * 3.6deg));
+}
 
 /* White Center Circle */
 .pie-center {
@@ -516,7 +558,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .pie-chart {
     margin-bottom: 20px;
   }
@@ -525,7 +567,7 @@
 /* Organizational Assignments Styles */
 
 .box-org .box-content {
-  padding:10px 102px 10px 0px;
+  padding: 10px 102px 10px 0px;
 }
 
 .org-grid {
@@ -556,7 +598,7 @@
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
+
   .org-value {
     margin-bottom: 10px;
   }
@@ -564,7 +606,8 @@
 
 /* My Payslips */
 
-.payslip-item, .no-data span{
+.payslip-item,
+.no-data span {
   color: #2a56a0;
   font-weight: 500;
   padding: 60px;
@@ -580,8 +623,11 @@
 .expense-item {
   display: flex;
   align-items: center;
-  padding: 12px 15px;
+  padding: 9px;
   border-bottom: 1px solid #f0f0f0;
+   background-color: #e4e5e6;
+   border-radius: 5px;
+   margin: 5px;
 }
 
 .expense-item:last-child {
@@ -598,37 +644,29 @@
   font-size: 12px;
   padding: 3px 8px;
   border-radius: 3px;
-  margin: 0 15px;
+  margin: 0 80px;
   font-weight: 500;
 }
 
 .expense-status.saved {
-  background-color: #e3f2fd;
+  margin-right: 95px;
   color: #1976d2;
 }
 
 .expense-status.archived {
-  background-color: #f5f5f5;
-  color: #616161;
+  margin-right: 85px;
+  color: #f11a1a;
 }
 
 .expense-status.approved {
-  background-color: #e8f5e9;
   color: #388e3c;
 }
 
 .expense-icon {
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  color: #d32f2f;
-  font-size: 14px;
-}
-
-/* For actual PDF icons, you would use: */
-.expense-icon {
   width: 16px;
   height: 16px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='%231976D2'%3E%3Cpath d='M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z'/%3E%3C/svg%3E");  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='%231976D2'%3E%3Cpath d='M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -638,7 +676,7 @@
     flex-wrap: wrap;
     gap: 8px;
   }
-  
+
   .expense-status {
     margin: 0;
     order: 3;
@@ -650,13 +688,16 @@
 /* My Benefits & Tax Styles */
 
 .box-benefits .box-content {
-  padding: 8px;
+  padding: 0px 5px;
 }
 
 /* Benefit Items */
 .benefit-item {
-  padding: 5px 0;
+  padding: 0px;
   border-bottom: 1px solid #f5f5f5;
+  background-color: #edeaea;
+  border-radius: 3px;
+  margin: 4px;
 }
 
 .benefit-item:last-child {
@@ -666,31 +707,33 @@
 .benefit-details {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  gap: 0px;
+  font-size: 12px;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
+  padding: 0px 15px;
 }
 
-.benefit-icon {
-  font-size: 18px;
-}
+/* .benefit-icon {
+  font-size: 29px;
+} */
 
 .benefit-footer {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   top: 0;
   align-items: center;
 }
 
 .benefit-date {
-  font-size: 12px;
-  color:1px solid #666;
+  font-size: 10px;
+  color: 1px solid #666;
+  padding: 0px 0px 0px 10px;
 }
 
 .benefit-status {
   display: flex;
-  gap: 8px;
+  gap: 0px;
 }
 
 .status-badge {
@@ -698,18 +741,19 @@
   padding: 4px 8px;
   border-radius: 12px;
   font-weight: 500;
+  margin-left: 150px;
 }
 
 .status-badge.processed {
   background-color: #e3f2fd;
   color: #1976d2;
-  margin-left: 25px;
+  margin-left: 160px;
 }
 
 .status-badge.approved {
   background-color: #e8f5e9;
   color: #388e3c;
-  margin-right:70px;
+  margin-right: 70px;
 }
 
 .status-badge.view {
@@ -728,8 +772,7 @@
 
 /* Document Item */
 .document-item {
-  margin-top: 12px;
-  padding-top: 12px;
+  padding-top: 10px;
   border-top: 1px dashed #e0e0e0;
 }
 
@@ -740,7 +783,7 @@
     align-items: flex-start;
     gap: 8px;
   }
-  
+
   .benefit-status {
     align-self: flex-end;
   }
