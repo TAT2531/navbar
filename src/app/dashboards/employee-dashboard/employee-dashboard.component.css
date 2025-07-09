@@ -327,7 +327,7 @@
 
 .document-icon {
   width: 24px;
-  height: 24px;
+  height: 20px;
   margin-right: 12px;
   display: flex;
   align-items: center;
@@ -337,14 +337,12 @@
 .document-icon svg {
   width: 20px;
   height: 20px;
-  padding-bottom: 6px;
 }
 
 .document-name {
   flex: 1;
-  font-size: 13px;
+  font-size: 12px;
   color: #333;
-  padding-bottom: 6px;
 }
 
 .document-actions {
@@ -356,7 +354,6 @@
   border: none;
   color: #1976d2;
   cursor: pointer;
-  padding-bottom: 6px;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
