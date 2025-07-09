@@ -570,7 +570,7 @@
   font-size: 14px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
   cursor: pointer;
   width: 100%;
 }
@@ -588,8 +588,8 @@
 /* Text label styling */
 .action-label {
   flex: 1;
-  font-size: 15px;
-  padding-bottom: 4px;
+  font-size: 14px;
+  padding: 0 0 4px 25px;
 }
 
 /* Count styling */
@@ -745,11 +745,11 @@
 
 /* Benefit Items */
 .benefit-item {
-  padding: 0px;
+  /* padding: 2px; */
   border-bottom: 1px solid #f5f5f5;
   background-color: #faf8f8;
   border-radius: 3px;
-  margin: 4px;
+  margin-bottom: 5px;
 }
 
 .benefit-item:last-child {
@@ -760,66 +760,56 @@
   display: flex;
   align-items: center;
   gap: 0px;
-  font-size: 12px;
+  font-size: 12.5px;
   color: #333;
   margin-bottom: 0px;
-  /* padding: 0px 15px; */
+  padding: 0px 13px;
 }
 
-/* .benefit-icon {
-  font-size: 29px;
-} */
 
 .benefit-footer {
   display: flex;
-  justify-content: space-around;
-  top: 0;
-  align-items: center;
 }
 
 .benefit-date {
   font-size: 10px;
   color: 1px solid #666;
-  /* padding: 0px 0px 0px 12px; */
+  padding: 0px 0px 0px 14px;
+  top: 0;
 }
 
 .benefit-status {
   display: flex;
-  gap: 0px;
+  gap: 30px;
 }
 
 .status-badge {
-  font-size: 12px;
-  /* padding: 4px 8px; */
-  border-radius: 12px;
+  font-size: 12.5px;
   font-weight: 500;
-  margin-left: 100px;
 }
 
 .status-badge.processed {
   color: #e05f1f;
-  /* margin-left: 160px; */
+  margin-left: 60px;
 }
 
 .status-badge.approved {
   color: #1ef329;
-  /* margin-right: 70px; */
+  margin-left: 70px;
 }
 
 .status-badge.view {
   color: #616161;
-  margin-left: 30px;
+  margin-left: 60px;
 }
 
 .status-badge.tds {
-  color: #ff8f00;
-  margin: 0px 50px;
+  margin: 0px 40px;
 }
 
 /* Document Item */
 .document-item {
   padding: 10px;
-  border-top: 1px dashed #e0e0e0;
 }
 
 /* Responsive Design */
