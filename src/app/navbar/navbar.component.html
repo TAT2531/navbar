@@ -312,7 +312,7 @@
         <div *ngIf="activeDropdown === 'Dashboards'" class="dropdown-menu menu">
           <div class="dropdown-column">
             <a class="dropdown-item" (click)="openEmployeeDashboardModal()">Employee DashBoard</a>
-            <a class="dropdown-item" (click)="navigateTo('/dashboards/hr')">HR DashBoard</a>
+            <a class="dropdown-item" routerLink="/hr-dashboard">HR DashBoard</a> 
             <a class="dropdown-item" (click)="navigateTo('/dashboards/hr-recruitment')">Hr Recruitment DashBoard</a>
             <a class="dropdown-item" (click)="navigateTo('/dashboards/invoice')">Invoice DashBoard</a>
             <a class="dropdown-item" (click)="navigateTo('/dashboards/task-board')">Task Board DashBoard</a>
