@@ -10,7 +10,7 @@
 }
 
 .dashboard-header h2 {
-  color: #0e4091;
+  color: #346ac0;
   font-size: 24px;
 }
 
@@ -40,14 +40,16 @@
 .box-header {
   background-color: white;
   color: #3768b7;
-  padding: 10px 15px;
+  padding: 5px 15px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
 
 .box-header h3 {
   margin: 0;
+  color: #497cd3;
   font-size: 16px;
+  font-weight: 550;
 }
 
 .box-content {
@@ -98,25 +100,28 @@
 /*My Profile Card Styles */
 .card-1 {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 .card-1 .left{
-  width: 200px;
+  width: 180px;
 }
 
 .right{
-  width: 45%;
-  padding: 10px 0 0 10px;
+  width: 50%;
+  height: 180px;
+  padding: 5px 0 0 10px;
+  background-color: #f7f6f6;
+  border-radius: 10px;
 }
 
 .profile-header{
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 28% 72%;
 }
+
 .profile-content{
-  margin:0px 5px;
-  background-color: #f0efef;
+  margin:0px 0px;
   border-radius: 3px;
 }
 .box-profile .box-content {
@@ -124,8 +129,8 @@
 }
 
 .profile-header h4 {
-  margin: 0 0 15px 0;
-  font-size: 14px;
+  margin: 0 0 12px 0;
+  font-size: 12px;
   color: #333;
   font-weight: 500;
   line-height: 1.4;
@@ -145,30 +150,37 @@
 }
 
 .contact-info p {
-  margin: 4px 0;
+  margin: 5px 0;
   font-size: 11px;
-  color: #0e0d0d;
+  color: #575555;
   line-height: 1.4;
 }
 
 .contact-info p strong {
   font-size: 12px;
+  padding-right: 4px;
+}
+
+.contact-info p .email{
+  padding-right: 18px;
 }
 
 .resume-upload {
-  margin-top: 15px;
+  margin-top: 8px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .upload-btn {
   background-color: #3768b7;
   color: white;
   border: none;
-  padding: 4px 10px;
-  border-radius: 3px;
-  font-size: 12px;
+  padding: 4px 15px;
+  border-radius: 5px;
+  font-size: 10px;
   cursor: pointer;
 }
 
@@ -177,22 +189,22 @@
 }
 
 .leave-table {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
-  font-size: 10px;
+  font-size: 9px;
+  margin: 0px;
 }
 
 .leave-table th {
   text-align: left;
-  padding: 6px 2px;
-  background-color: #f9f9f9;
+  padding: 0px 4px;
   font-weight: 500;
   color:#1976d2;
 }
 
 .leave-table td {
   text-align:center;
-  padding: 6px 3px;
+  padding: 2px 5px;
   border-bottom:#d2d0d0;
 }
 
@@ -239,24 +251,24 @@
 }
 
 .detail-label {
-  font-size: 16px;
+  font-size: 14px;
   color: #474747;
   font-weight: 600;
   margin-bottom: 0px;
 }
 
 .detail-value {
-  font-size: 12px;
+  font-size: 9px;
+  font-weight: 500;
   color: #3a3939;
-  padding: 2px 0;
+  padding: 0px;
   min-height: 5px;
-  /* border-bottom: 1px dashed #eee; */
 }
 
 .contact{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #edeaea;
+  background-color: #f9f6f6;
   border-radius: 3px;
   grid-column: span 2;
   padding:5px 0px 0px 15px;
@@ -271,9 +283,9 @@
 
 .section-header h4 {
   margin: 0;
-  font-size: 16px;
-  color: #2a56a0;
-  font-weight: 600;
+  font-size: 15px;
+  color: #497cd3;
+  font-weight: 400;
 }
 
 /* Responsive adjustments */
@@ -290,20 +302,22 @@
 
 /* Documents Card Styles */
 .box-documents .box-content {
-  padding: 10px 0;
+  padding:0 10px 10px 10px;
 }
 
 .documents-list {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 1px;
 }
 
 .document-item {
   display: flex;
   align-items: center;
   padding: 0px 15px;
-  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 5px;
+  background-color: #f9f6f6;
+  border-radius: 3px;
   transition: background-color 0.2s;
 }
 
@@ -323,12 +337,14 @@
 .document-icon svg {
   width: 20px;
   height: 20px;
+  padding-bottom: 6px;
 }
 
 .document-name {
   flex: 1;
   font-size: 13px;
   color: #333;
+  padding-bottom: 6px;
 }
 
 .document-actions {
@@ -338,8 +354,9 @@
 .download-btn {
   background: none;
   border: none;
+  color: #1976d2;
   cursor: pointer;
-  padding: 5px;
+  padding-bottom: 6px;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
@@ -351,6 +368,7 @@
 .download-btn svg {
   width: 18px;
   height: 18px;
+  color: #1f62a9;
 }
 
 /* Responsive adjustments */
@@ -368,7 +386,7 @@
 
 .projects-container {
   display: flex;
-  gap: 0 5px;
+  gap: 0 12px;
 }
 
 .projects-section {
@@ -377,26 +395,29 @@
 
 .projects-section h4 {
   margin: 0 0 5px 0;
-  font-size: 14px;
-  color: #555;
+  font-size: 15px;
+  color: #1976d2;
+  font-weight: 500;
 }
 
 .projects-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  max-height: 159px;
+  max-height: 199px;
   overflow-y: auto;
 }
 
 .projects-list li {
-  padding: 4px 12px;
-  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  padding: 0px 0px;
   font-size: 12px;
   color: #333;
   cursor: pointer;
+  background-color: #f9f6f6;
+  margin-bottom: 8px;
+   border-radius: 4px;
 }
 
 .projects-list li:first-child {
@@ -405,33 +426,34 @@
   font-weight: bold;
 }
 
-.projects-list li:last-child {
-  border-bottom: none;
-}
-
 .project-details {
   flex: 1;
-  border: 1px solid #eee;
   border-radius: 4px;
   padding: 0px;
 }
 
 .project-title {
-  font-weight: bold;
+  color: #1976d2;
   margin-bottom: 0px;
   font-size: 14px;
-  padding-bottom: 0px;
-  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #eee;
+  background-color: #f9f6f6;
+  padding-left: 8px;
+  border-radius: 2px;
 }
 
 .project-info {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .project-info tr {
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
+  background-color: #f9f6f6;
+  border-radius: 6px;
 }
 
 .project-info tr:last-child {
@@ -439,14 +461,13 @@
 }
 
 .project-info td {
-  padding: 4px 0;
-  font-size: 11px;
+  padding: 1px 8px;
+  font-size: 10px;
 }
 
 .project-info .label {
   color: #666;
-  width: 55%;
-  vertical-align: top;
+  /* width: 55%; */
 }
 
 
@@ -467,7 +488,7 @@
 .pie-chart-container {
   display: flex;
   align-items: center;
-  gap: 30px;
+  /* gap: 30px; */
   background-color: #f8f8f8;
   border-radius: 2px;
 }
@@ -536,8 +557,7 @@
   flex-direction: column;
   gap: 12px;
   width:125%;
-  padding: 5px;
-  border-radius: 2px;
+  padding:0 5px;
 }
 
 /* Style for each list item */
@@ -545,10 +565,12 @@
   display: flex;
   align-items: center;
   background-color: #f8f8f8;
+   border-radius: 4px;
 }
 
 /* Style for the label container */
 .action-item label {
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -558,9 +580,9 @@
 
 /* Icon styling */
 .action-icon {
-  font-size: 18px;
+  /* font-size: 22px; */
   width: 18px;
-  height: 18px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -569,13 +591,14 @@
 /* Text label styling */
 .action-label {
   flex: 1;
-  font-size: 14px;
+  font-size: 15px;
+  padding-bottom: 4px;
 }
 
 /* Count styling */
 .action-count {
   font-weight: bold;
-  color: #333;
+  color:#1976d2;
   margin-left: auto;
   padding-right: 8px;
 }
@@ -596,15 +619,15 @@
 /* Organizational Assignments Styles */
 
 .box-org .box-content {
-  padding: 10px 102px 10px 0px;
+  padding: 1px 102px 5px 0px;
 }
 
 .org-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 20px;
-  font-size: 14px;
-  padding: 0px 39px 0px 55px;
+  gap: 6px 39px;
+  font-size: 13px;
+  padding: 0px 39px 5px 55px;
 
 }
 
@@ -618,7 +641,8 @@
 .org-value {
   color: #333;
   font-weight: 400;
-  word-break: break-word;
+  font-size:11px;
+  /* word-break: break-word; */
 }
 
 /* Responsive adjustments */
@@ -639,14 +663,16 @@
 .no-data span {
   color: #2a56a0;
   font-weight: 500;
-  padding: 60px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 
 /* My Expenses Styles */
 
 .box-expenses .box-content {
-  padding: 0;
+  padding: 0 4px;
 }
 
 .expense-item {
@@ -654,7 +680,7 @@
   align-items: center;
   padding: 9px;
   border-bottom: 1px solid #f0f0f0;
-   background-color: #e4e5e6;
+   background-color: #f7f7f8;
    border-radius: 5px;
    margin: 5px;
 }
@@ -684,11 +710,11 @@
 
 .expense-status.archived {
   margin-right: 85px;
-  color: #f11a1a;
+  color: #e023a4;
 }
 
 .expense-status.approved {
-  color: #388e3c;
+  color: #27e831;
 }
 
 .expense-icon {
@@ -717,14 +743,14 @@
 /* My Benefits & Tax Styles */
 
 .box-benefits .box-content {
-  padding: 0px 5px;
+  padding: 0px 6px;
 }
 
 /* Benefit Items */
 .benefit-item {
   padding: 0px;
   border-bottom: 1px solid #f5f5f5;
-  background-color: #edeaea;
+  background-color: #faf8f8;
   border-radius: 3px;
   margin: 4px;
 }
@@ -740,7 +766,7 @@
   font-size: 12px;
   color: #333;
   margin-bottom: 0px;
-  padding: 0px 15px;
+  /* padding: 0px 15px; */
 }
 
 /* .benefit-icon {
@@ -757,7 +783,7 @@
 .benefit-date {
   font-size: 10px;
   color: 1px solid #666;
-  padding: 0px 0px 0px 10px;
+  /* padding: 0px 0px 0px 12px; */
 }
 
 .benefit-status {
@@ -767,41 +793,35 @@
 
 .status-badge {
   font-size: 12px;
-  padding: 4px 8px;
+  /* padding: 4px 8px; */
   border-radius: 12px;
   font-weight: 500;
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 .status-badge.processed {
-  background-color: #e3f2fd;
-  color: #1976d2;
-  margin-left: 160px;
+  color: #e05f1f;
+  /* margin-left: 160px; */
 }
 
 .status-badge.approved {
-  background-color: #e8f5e9;
-  color: #388e3c;
-  margin-right: 70px;
+  color: #1ef329;
+  /* margin-right: 70px; */
 }
 
 .status-badge.view {
-  background-color: #f5f5f5;
   color: #616161;
-  border: 1px solid #e0e0e0;
   margin-left: 30px;
 }
 
 .status-badge.tds {
-  background-color: #fff8e1;
   color: #ff8f00;
-  border: 1px solid #ffe0b2;
   margin: 0px 50px;
 }
 
 /* Document Item */
 .document-item {
-  padding-top: 10px;
+  padding: 10px;
   border-top: 1px dashed #e0e0e0;
 }
 
@@ -817,3 +837,6 @@
     align-self: flex-end;
   }
 }
+
+
+
