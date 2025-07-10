@@ -1,91 +1,107 @@
-<p>hr-dashboard works!</p>
-
-
 <div class="hr-dashboard-container">
   <div class="dashboard-header">
     <h1>HR Dashboard</h1>
   </div>
-  
+
   <div class="metrics-container">
     <!-- Small Cards Section -->
     <div class="small-cards-grid">
       <!-- Small Card 1 -->
       <div class="metric-card small">
-        <div class="metric-title">Head Count</div>
-        <div class="metric-value">656</div>
+        <div class="metric-title">Head Count : <span class="metric-value">656</span></div>
       </div>
-      
+
       <!-- Small Card 2 -->
       <div class="metric-card small">
-        <div class="metric-title">Attrition Count</div>
-        <div class="metric-value">17</div>
+        <div class="metric-title">Joining Pipeline : <span class="metric-value">17</span></div>
+
       </div>
-      
+
       <!-- Small Card 3 -->
       <div class="metric-card small">
-        <div class="metric-title">Absenteeism Per Month</div>
-        <div class="metric-value">0%</div>
+        <div class="metric-title">Attrion Count: <span class="metric-value">17</span></div>
+
       </div>
-      
+
       <!-- Small Card 4 -->
       <div class="metric-card small">
-        <div class="metric-title">Employment Index</div>
-        <div class="metric-value">1</div>
+        <div class="metric-title">Absenteeism Per Month : <span class="metric-value">0%</span></div>
+
       </div>
     </div>
-    
+
     <!-- Big Cards Section -->
     <div class="big-cards-grid">
-      <!-- Big Card 1 -->
+      <!-- Card 1 -->
       <div class="metric-card big">
         <div class="metric-title">Employee Count By Country</div>
         <div class="metric-chart">
-          <!-- Chart placeholder -->
-          <div class="chart-placeholder">Country distribution visualization</div>
+          <app-chart-wrapper [type]="countryChart.type" [data]="countryChart.data" [options]="countryChart.options">
+          </app-chart-wrapper>
         </div>
       </div>
-      
-      <!-- Big Card 2 -->
+
+      <!-- Card 2 -->
       <div class="metric-card big">
         <div class="metric-title">Employee Count by Department</div>
         <div class="metric-chart">
-          <!-- Chart placeholder -->
-          <div class="chart-placeholder">Department distribution visualization</div>
-          <div class="year-range">
-            <span>2020</span>
-            <span>2021</span>
-            <span>2022</span>
-            <span>2023</span>
-            <span>2024</span>
-            <span>2025</span>
-            <span>2026</span>
-            <span>2027</span>
+          <app-chart-wrapper [type]="departmentChart.type" [data]="departmentChart.data"
+            [options]="departmentChart.options">
+          </app-chart-wrapper>
+          <div class="department">Departments</div>
+        </div>
+
+      </div>
+
+      <!-- Card 3 -->
+      <div class="metric-card big">
+        <div class="metric-title">HR Metrics</div>
+        <div class="metric-values">
+          <div class="metric-row" *ngFor="let metric of hrMetrics">
+            <span>{{ metric.label }}</span>
+            <span class="metric-value">{{ metric.value }}</span>
           </div>
         </div>
       </div>
-      
-      <!-- Big Card 3 -->
+
+      <!-- Card 4 -->
       <div class="metric-card big">
-        <div class="metric-title">HR to Employee Ratio</div>
-        <div class="metric-value-large">1.22%</div>
+        <div class="metric-title">Mining Progress Overview</div>
+        <div class="metric-table">
+          <div class="table-row header">
+            <div class="table-cell">Category</div>
+            <div class="table-cell">Value</div>
+          </div>
+          <div class="table-row" *ngFor="let item of miningProgress">
+            <div class="table-cell">{{ item.category }}</div>
+            <div class="table-cell">{{ item.value }}</div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Big Card 4 -->
+
+      <!-- Card 5 -->
       <div class="metric-card big">
-        <div class="metric-title">Gender Diversity Ratio</div>
-        <div class="metric-value-large">78.51%</div>
+        <div class="metric-title">Employee Count By EmployeeType</div>
+        <div class="metric-table">
+          <div class="table-row header">
+            <div class="table-cell">Employee Type</div>
+            <div class="table-cell">Count</div>
+          </div>
+          <div class="table-row" *ngFor="let item of employeeTypes">
+            <div class="table-cell">{{ item.type }}</div>
+            <div class="table-cell">{{ item.count }}</div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Big Card 5 -->
+
+      <!-- Card 6 -->
       <div class="metric-card big">
-        <div class="metric-title">Average Age</div>
-        <div class="metric-value-large">28.14 years</div>
-      </div>
-      
-      <!-- Big Card 6 -->
-      <div class="metric-card big">
-        <div class="metric-title">Average Experience</div>
-        <div class="metric-value-large">1.81 year(s)</div>
+        <div class="metric-title">Employee Count by ImmigrationStatus</div>
+        <div class="metric-chart">
+          <app-chart-wrapper [type]="immigrationChart.type" [data]="immigrationChart.data"
+            [options]="immigrationChart.options">
+          </app-chart-wrapper>
+        </div>
       </div>
     </div>
   </div>
