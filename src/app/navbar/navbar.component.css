@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  height: 45px;
+  height: 40px;
   color: rgb(244, 238, 238);
 }
 
@@ -43,7 +43,7 @@
   width: 22px;
   height: 22px;
   fill: white;
-  padding:0px 0px 0px 28px;
+  padding:0px 0px 0px 10px;
   transition: transform 0.2s;
 }
 
@@ -98,7 +98,7 @@
   font-weight: 600;
 }
 .menu-item-header:hover {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .dropdown-columns {
@@ -109,7 +109,7 @@
 
 .dropdown-column {
   flex: 1;
-  min-width: 170px;
+  min-width: 175px;
 }
 
 .dropdown-item {

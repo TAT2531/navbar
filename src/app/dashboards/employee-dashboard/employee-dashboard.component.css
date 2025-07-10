@@ -505,17 +505,18 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  clip-path: polygon(50% 50%, 50% 0, 0 0);
+  clip-path: polygon(48% 30%, 50% 0, 43% 0);
   transform: rotate(0deg);
 }
 
 /* Segment Colors */
 .segment-tasks {
-  background: #1f62a9;
+  background: #ffffff;
+  margin: 3px;
 }
 
 .segment-timesheet {
-  background: #ba7a3a;
+  background: #f3f2f2;
   transform: rotate(0deg);
 }
 
@@ -525,25 +526,27 @@
 }
 
 .segment-evaluation {
-  background: #cfae0a;
+  background: #ffffff;
+  padding: 1px;
   transform: rotate(calc(74% * 3.6deg));
 }
 
 .segment-cases {
-  background: #2ef413;
+  background: #22c6ef;
+  margin:2px;
   transform: rotate(calc(74% * 3.6deg));
 }
 
 .pie-center {
   position: absolute;
-  width: 50%;  /* Adjust this to change the size of the white circle */
-  height: 50%; /* Should match width to keep it circular */
+  width: 50%; 
+  height: 50%; 
   background: white;
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* This centers it perfectly */
-  z-index: 10; /* Make sure it's above the segments */
+  transform: translate(-50%, -50%); 
+  z-index: 10; 
 }
 
 /* Actions List */
@@ -563,11 +566,12 @@
   align-items: center;
   background-color: #f8f8f8;
    border-radius: 4px;
+   padding: 1px;
 }
 
 /* Style for the label container */
 .action-item label {
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   gap: 0px;
@@ -588,7 +592,7 @@
 /* Text label styling */
 .action-label {
   flex: 1;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0 0 4px 25px;
 }
 
@@ -763,7 +767,7 @@
   font-size: 12.5px;
   color: #333;
   margin-bottom: 0px;
-  padding: 0px 13px;
+  padding: 2px 13px;
 }
 
 
