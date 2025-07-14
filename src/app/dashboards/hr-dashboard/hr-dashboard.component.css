@@ -2,7 +2,7 @@
 .hr-dashboard-container {
   padding: 10px;
   background-color: #f5f7fa;
-  min-height: calc(100vh - 60px);
+  /* min-height: calc(100vh - 60px); */
 }
 
 .dashboard-header h1 {
@@ -46,10 +46,6 @@
   justify-content: center;
 }
 
-.metric-card.big {
-  min-height: 250px;
-}
-
 /* Content Styles */
 .metric-title {
   color: #4a5568;
@@ -59,7 +55,7 @@
 }
 
 .big .metric-title {
-  color: #236ee7;
+  color: #5f96ed;
 }
 
 .metric-value {
@@ -69,20 +65,11 @@
 }
 
 .metric-value-large {
-  color: #0e4091;
+  color: #3577e1;
   font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-top: 30px;
-}
-
-/* Chart and Data Visualization Styles */
-.metric-chart {
-  height: 150px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 /* Data Display Styles */
@@ -95,8 +82,10 @@
 
 .metric-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   font-size: 12px;
+  gap: 50px;
+  background-color: rgb(245, 247, 249);
 }
 
 .metric-row span:first-child {
@@ -155,25 +144,35 @@
 }
 
 
+.metric-card.big {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+}
 
-/* Add to hr-dashboard.component.css */
+.metric-title {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 15px;
+
+}
+
 .metric-chart {
-  height: 245px; /* Increased height for better spacing */
+  height: 250px;
+  width: 100%;
   position: relative;
 }
 
-.metric-chart canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.department{
-  display: flex;
-  justify-content: center;
+.department {
+  text-align: center;
   color: #5c8fe3;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 12px;
 }
 
-/* Ensure department names are visible */
-.big-cards-grid .metric-card:nth-child(2) .metric-chart {
-  padding-bottom: 40px;
-}
+
+
+
+

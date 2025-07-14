@@ -1,6 +1,6 @@
-// src/app/components/chart-wrapper/chart-wrapper.component.ts
-import { Component, Input, ViewChild, ElementRef, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
-import { Chart, ChartType, registerables } from 'chart.js';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Chart, ChartType, ChartData, ChartOptions, registerables } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-chart-wrapper',
@@ -11,26 +11,19 @@ import { Chart, ChartType, registerables } from 'chart.js';
   `],
   standalone: true
 })
-export class ChartWrapperComponent implements AfterViewInit, OnChanges {
+export class ChartWrapperComponent implements AfterViewInit, OnDestroy {
   @ViewChild('chartCanvas') chartCanvas!: ElementRef<HTMLCanvasElement>;
-  @Input() type: ChartType = 'pie';
-  @Input() data: any;
-  @Input() options: any;
-  private chart: Chart | undefined;
+  @Input() type!: ChartType;
+  @Input() data!: ChartData;
+  @Input() options!: ChartOptions;
+  private chart!: Chart;
 
   constructor() {
-    Chart.register(...registerables);
+    Chart.register(...registerables, ChartDataLabels);
   }
 
   ngAfterViewInit(): void {
     this.createChart();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.chart) {
-      this.chart.destroy();
-      this.createChart();
-    }
   }
 
   private createChart(): void {
