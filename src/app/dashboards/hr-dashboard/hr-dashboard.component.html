@@ -51,31 +51,23 @@
 
       <div class="metric-card big">
         <div class="metric-title">Mining Progress Overview</div>
-        <div class="metric-table">
-          <div class="table-row header">
-            <div class="table-cell">Category</div>
-            <div class="table-cell">Value</div>
-          </div>
-          <div class="table-row" *ngFor="let item of miningProgress">
-            <div class="table-cell">{{ item.category }}</div>
-            <div class="table-cell">{{ item.value }}</div>
-          </div>
+        <div class="metric-chart">
+          <app-chart-wrapper [type]="miningProgressChart.type" [data]="miningProgressChart.data"
+            [options]="miningProgressChart.options">
+          </app-chart-wrapper>
         </div>
       </div>
 
-      <div class="metric-card big">
-        <div class="metric-title">Employee Count By EmployeeType</div>
-        <div class="metric-table">
-          <div class="table-row header">
-            <div class="table-cell">Employee Type</div>
-            <div class="table-cell">Count</div>
-          </div>
-          <div class="table-row" *ngFor="let item of employeeTypes">
-            <div class="table-cell">{{ item.type }}</div>
-            <div class="table-cell">{{ item.count }}</div>
-          </div>
-        </div>
-      </div>
+     <div class="metric-card big">
+  <div class="metric-title">Employee Count By Employee Type</div>
+  <div class="metric-chart">
+    <app-chart-wrapper 
+      [type]="employeeTypeChart.type" 
+      [data]="employeeTypeChart.data" 
+      [options]="employeeTypeChart.options">
+    </app-chart-wrapper>
+  </div>
+</div>
 
       <div class="metric-card big">
         <div class="metric-title">Employee Count by Immigration Status</div>
@@ -88,7 +80,3 @@
     </div>
   </div>
 </div>
-
-
-
-

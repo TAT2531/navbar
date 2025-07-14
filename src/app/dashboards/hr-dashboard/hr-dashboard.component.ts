@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ChartWrapperComponent } from '../../components/chart-wrapper/chart-wrapper.component';
 import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import * as ChartDataLabels from 'chartjs-plugin-datalabels';
+import { min } from 'rxjs';
 
 // Register Chart.js components
 Chart.register(
@@ -147,7 +148,7 @@ departmentChart = {
             return label;
           }
         },
-        // Added x-axis title configuration
+       
         title: {
           display: true,
           text: 'Departments',
@@ -172,29 +173,208 @@ departmentChart = {
   ];
 
   // Card 4: Mining Progress
-  miningProgress = [
-    { category: 'Open Position', value: 120 },
-    { category: 'Total Offered', value: 40 },
-    { category: 'Joining Pipeline', value: '10%' }
-  ];
+miningProgressChart = {
+  type: 'bar' as const,
+  data: {
+    labels: ['Open Position', 'Total Offered', 'Joining Pipeline'],
+    datasets: [{
+      label: 'Count',
+      data: [48, 120, 189],  // Using the values from your list (200, 140, 120)
+      backgroundColor: [
+         
+        '#FFCE56',// Yellow for Joining Pipeline
+        '#5c8fe3', // Blue for Open Position
+        '#4BC0C0' // Teal for Total Offered
+      ],
+      borderColor: '#fff',
+      borderWidth: 1,
+      barThickness: 40
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: true
+      },
+      datalabels: {
+        anchor: 'end' as const,
+        align: 'top' as const,
+        color: '#000',
+        font: {
+          weight: 'bold' as const,
+          size: 12
+        },
+        formatter: (value: number) => value.toString(),
+        offset: 4
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        min:40,
+        max: 200,
+        grid: {
+          display: true,
+          color: 'rgba(0, 0, 0, 0.1)',
+          drawTicks: false
+        },
+        ticks: {
+          stepSize: 20,
+          color: '#5c8fe3',
+          font: {
+            weight: 'bold' as const
+          }
+        }, 
+      },
+      x: {
+        grid: {
+          display: false,
+          drawOnChartArea: false,
+          drawTicks: false
+        },
+        ticks: {
+          color: '#333',
+          font: {
+            size: 12,
+            weight: 'bold' as const
+          }
+        },
+      }
+    }
+  }
+};
 
   // Card 5: Employee Types
-  employeeTypes = [
-    { type: 'Full Time Employee', count: 88 },
-    { type: 'Contractor', count: 17 },
-    { type: 'Consultant', count: 32 },
-    { type: 'Intern', count: 4 },
-    { type: 'Other', count: 1 }
-  ];
+employeeTypeChart = {
+  type: 'bar' as const,
+  data: {
+    labels: [
+      '10PS',
+      'Office Assistant',
+      'Freshers',
+      'Consultant',
+      'House Keeping',
+      'Full Time Employee',
+      'CONTRACTOR',
+      'Contractor',
+      'Temporary',
+      'C2C',
+      'Consistent',
+      'W-2',
+      'W-2 Contract',
+      'CORRELATION',
+      'Office Assistant - Emission'
+    ],
+    datasets: [{
+      label: 'Employees',
+      data: [1, 12, 95, 16, 19, 382, 1, 83, 3, 17, 32, 4, 1, 2, 3],
+      backgroundColor: [
+        '#5c8fe3', '#4BC0C0', '#FFCE56', '#FF6384', '#9966FF',
+        '#36A2EB', '#FF9F40', '#8A2BE2', '#7CFC00', '#FF4500',
+        '#9370DB', '#00FA9A', '#1E90FF', '#FFD700', '#8B008B'
+      ],
+      borderColor: '#fff',
+      borderWidth: 1,
+      barThickness: 15
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: true,
+        callbacks: {
+          label: (context : any) => `${context.parsed.y} employees`
+        }
+      },
+      datalabels: {
+        anchor: 'end' as const,
+        align: 'top' as const,
+        color: '#000',
+        font: {
+          weight: 'bold' as const,
+          size: 10
+        },
+        formatter: (value: number) => value.toString(),
+        offset: 2
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        min: 0,
+        max: 450,
+        grid: {
+          display: true,
+          color: 'rgba(0, 0, 0, 0.1)',
+          drawTicks: false,
+          lineWidth: 1
+        },
+        ticks: {
+          stepSize: 50,
+          color: '#5c8fe3',
+          font: {
+            size: 10
+          }
+        },
+        title: {
+          display: true,
+          text: 'Employees',
+          color: '#5c8fe3',
+          font: {
+            size: 12,
+            weight: 'bold' as const
+          }
+        }
+      },
+      x: {
+        grid: {
+          display: false
+        },
+        ticks: {
+          color: '#333',
+          font: {
+            size: 8
+          },
+          // callback: function(value, index) {
+          //   const label = this.getLabelForValue(value);
+          //   return label.length > 12 ? label.substring(0, 10) + '...' : label;
+          // }
+        },
+        title: {
+          display: true,
+          text: 'Employee Type',
+          color: '#5c8fe3',
+          font: {
+            size: 12,
+            weight: 'bold' as const
+          },
+          padding: {
+            top: 10
+          }
+        }
+      }
+    }
+  }
+};
 
   // Card 6: Immigration Chart
   immigrationChart = {
   type: 'pie' as const,
   data: {
-    labels: ['Citizen', 'Green Card', 'OPT', 'H1-B', 'Other'],
+    labels: ['--137', '500', 'G.C - 1', 'OPT - 1', 'G.C.CAD - 1', 'U.S.Chrm - 1', 'H1-B - 15'],
     datasets: [{
-      data: [500, 1, 1, 15, 20],
-      backgroundColor: ['#5c8fe3', '#4BC0C0', '#FFCE56', '#FF6384', '#9966FF'],
+      data: [120, 490, 1, 1, 10],
+      backgroundColor: ['rgb(239, 116, 64)', 'rgb(18, 154, 238)', 'yellow', 'purple', 'rgb(18, 238, 51)'],
       borderWidth: 1
     }]
   },
@@ -203,7 +383,8 @@ departmentChart = {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'right' as const, // <-- Fixed by using 'as const'
+        position: 'right' as const, // Fixed with type assertion
+        align: 'start' as const,   
         labels: { 
           boxWidth: 10, 
           padding: 5, 

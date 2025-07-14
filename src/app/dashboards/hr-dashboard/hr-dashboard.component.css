@@ -159,9 +159,10 @@
 }
 
 .metric-chart {
-  height: 250px;
+  height: 280px;
   width: 100%;
   position: relative;
+  /* color: #236ee7 ; */
 }
 
 .department {
@@ -171,8 +172,3 @@
   margin-top: 10px;
   font-size: 12px;
 }
-
-
-
-
-
