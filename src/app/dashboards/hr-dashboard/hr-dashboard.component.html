@@ -6,15 +6,19 @@
   <div class="metrics-container">
     <!-- Small Cards Section -->
     <div class="small-cards-grid">
-      <div class="metric-card small">
-        <div class="metric-title">Head Count: <span class="metric-value">656</span></div>
+
+      <div class="metric-card small" (click)="openEmployeeTable()">
+        <div class="metric-title">Head Count: <span class="metric-value">{{headCount}}</span></div>
       </div>
+
       <div class="metric-card small">
         <div class="metric-title">Joining Pipeline: <span class="metric-value">17</span></div>
       </div>
+
       <div class="metric-card small">
         <div class="metric-title">Attrition Count: <span class="metric-value">17</span></div>
       </div>
+
       <div class="metric-card small">
         <div class="metric-title">Absenteeism Per Month: <span class="metric-value">0%</span></div>
       </div>
@@ -22,6 +26,8 @@
 
     <!-- Big Cards Section -->
     <div class="big-cards-grid">
+
+      <!-- Card-1 -->
       <div class="metric-card big">
         <div class="metric-title">Employee Count By Country</div>
         <div class="metric-chart">
@@ -30,6 +36,7 @@
         </div>
       </div>
 
+      <!-- Card-2 -->
       <div class="metric-card big">
         <div class="metric-title">Employee Count by Department</div>
         <div class="metric-chart">
@@ -39,6 +46,7 @@
         </div>
       </div>
 
+      <!-- Card-3 -->
       <div class="metric-card big">
         <div class="metric-title">HR Metrics</div>
         <div class="metric-values">
@@ -49,6 +57,7 @@
         </div>
       </div>
 
+      <!-- Card-4 -->
       <div class="metric-card big">
         <div class="metric-title">Mining Progress Overview</div>
         <div class="metric-chart">
@@ -58,17 +67,17 @@
         </div>
       </div>
 
-     <div class="metric-card big">
-  <div class="metric-title">Employee Count By Employee Type</div>
-  <div class="metric-chart">
-    <app-chart-wrapper 
-      [type]="employeeTypeChart.type" 
-      [data]="employeeTypeChart.data" 
-      [options]="employeeTypeChart.options">
-    </app-chart-wrapper>
-  </div>
-</div>
+      <!-- Card-5 -->
+      <div class="metric-card big">
+        <div class="metric-title">Employee Count By Employee Type</div>
+        <div class="metric-chart">
+          <app-chart-wrapper [type]="employeeTypeChart.type" [data]="employeeTypeChart.data"
+            [options]="employeeTypeChart.options">
+          </app-chart-wrapper>
+        </div>
+      </div>
 
+      <!-- Card-5 -->
       <div class="metric-card big">
         <div class="metric-title">Employee Count by Immigration Status</div>
         <div class="metric-chart">

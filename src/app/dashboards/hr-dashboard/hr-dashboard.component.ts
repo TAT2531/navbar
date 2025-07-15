@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { ChartWrapperComponent } from '../../components/chart-wrapper/chart-wrapper.component';
 import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import * as ChartDataLabels from 'chartjs-plugin-datalabels';
-import { min } from 'rxjs';
+import { EmployeeDataService } from '../../services/employee-data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EmployeeTableComponent } from '../../components/employee-table/employee-table.component';
 
 // Register Chart.js components
 Chart.register(
@@ -24,7 +26,25 @@ Chart.register(
   styleUrls: ['./hr-dashboard.component.css']
 })
 export class HrDashboardComponent {
-  // Card 1: Employee Count By Country
+  headCount = 656; // Total head count
+
+  constructor(
+    private dialog: MatDialog,
+    private employeeService: EmployeeDataService
+  ) {}
+
+  openEmployeeTable() {
+    this.dialog.open(EmployeeTableComponent, {
+      width: '100%',
+      maxWidth: '1300px',
+      maxHeight: '100vh',
+      data: {
+        employees: this.employeeService.getEmployees()
+      }
+    });
+  }
+
+ // Card 1: Employee Count By Country
  countryChart = {
   type: 'doughnut' as const,
   data: {
@@ -345,10 +365,6 @@ employeeTypeChart = {
           font: {
             size: 8
           },
-          // callback: function(value, index) {
-          //   const label = this.getLabelForValue(value);
-          //   return label.length > 12 ? label.substring(0, 10) + '...' : label;
-          // }
         },
         title: {
           display: true,
@@ -371,7 +387,7 @@ employeeTypeChart = {
   immigrationChart = {
   type: 'pie' as const,
   data: {
-    labels: ['--137', '500', 'G.C - 1', 'OPT - 1', 'G.C.CAD - 1', 'U.S.Chrm - 1', 'H1-B - 15'],
+    labels: ['--137', '500', 'G.C - 1', 'OPT - 1', 'Green Card - 1', 'U.S.Citizen - 1', 'H1-B - 15'],
     datasets: [{
       data: [120, 490, 1, 1, 10],
       backgroundColor: ['rgb(239, 116, 64)', 'rgb(18, 154, 238)', 'yellow', 'purple', 'rgb(18, 238, 51)'],
@@ -394,4 +410,5 @@ employeeTypeChart = {
     }
   }
 };
+
 }
