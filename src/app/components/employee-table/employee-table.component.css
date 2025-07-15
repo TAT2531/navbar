@@ -38,7 +38,7 @@ table {
 }
 
 th {
-  font-size: 11px;
+  font-size: 12px;
   color: #ddd;
   font-weight: 500;
   text-align: left;
@@ -53,7 +53,7 @@ th.head {
 }
 
 td {
-  font-size: 10px;
+  font-size: 11px;
   border-right: 1px solid #ddd;
   line-height: 1.2;
 }
