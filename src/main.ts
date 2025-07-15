@@ -10,8 +10,10 @@ import { appConfig } from './app/app.config';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 
+
 bootstrapApplication(AppComponent, {
   providers: [
+    
     provideAnimations(),
     provideHttpClient(),
     provideRouter(routes),
@@ -19,6 +21,8 @@ bootstrapApplication(AppComponent, {
       MatDialogModule,
       MatTableModule
     ),
+    
     ...appConfig.providers
   ]
+  
 }).catch(err => console.error(err));

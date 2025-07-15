@@ -1,22 +1,24 @@
+
+
 /* employee-table.component.css */
 .employee-table-container {
-  padding:0;
   width: 100%;
   overflow-x: auto;
 }
 
-.head-count{
+.head-count {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  padding: 0px 16px;
+  padding: 0 12px 8px 12px;
+  height: 30px;
 }
 
-.head-count span{
-  font-size: 10px;
+.head-count span {
+  font-size: 9px;
   background-color: #1868ea;
-  color: #ddd;
-  margin-right: 10px;
+  color: white;
+  margin-right: 8px;
   padding: 4px 8px;
   border-radius: 3px;
 }
@@ -26,32 +28,34 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  top: 8px;
+  transform: scale(0.8);
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 th {
-  font-size: 12px;
-  color:#ddd; 
+  font-size: 11px;
+  color: #ddd;
   font-weight: 500;
-  padding: 5px;
   text-align: left;
   border-right: 1px solid #fbf9f9;
 }
 
-th.head{
-  border-radius: 2px;
+th.head {
+  border-radius: 3px;
   background-color: #184ca0;
   position: sticky;
-  top: 0;
+  top: 0px;
 }
 
 td {
-  font-size: 12px;
-  padding:5px;
+  font-size: 10px;
   border-right: 1px solid #ddd;
+  line-height: 1.2;
 }
 
 
@@ -76,3 +80,4 @@ td {
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+

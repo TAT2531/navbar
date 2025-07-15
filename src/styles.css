@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* styles.css */
+.mat-mdc-table .mdc-data-table__row {
+  height: 28px !important;
+  min-height: 28px !important;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 35px !important;
+  min-height: 35px !important;
+}
+
+.mat-mdc-table .mdc-data-table__cell, 
+.mat-mdc-table .mdc-data-table__header-cell {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
