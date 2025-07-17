@@ -2,6 +2,7 @@
 
 /* employee-table.component.css */
 .employee-table-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
   overflow-x: auto;
 }
@@ -11,16 +12,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 12px 8px 12px;
-  height: 30px;
+  height: 25px;
 }
 
 .head-count span {
   font-size: 9px;
-  background-color: #1868ea;
+  background-color: #295aa8;
   color: white;
-  margin-right: 8px;
+  margin-right: 0px;
   padding: 4px 8px;
   border-radius: 3px;
+}
+input{
+  margin-left: 9px;
+  border-color: #f1f1f1;
 }
 
 .close-button {
@@ -38,7 +43,7 @@ table {
 }
 
 th {
-  font-size: 12px;
+  font-size: 11px;
   color: #ddd;
   font-weight: 500;
   text-align: left;
@@ -47,17 +52,21 @@ th {
 
 th.head {
   border-radius: 3px;
-  background-color: #184ca0;
+  background-color: #295aa8;
   position: sticky;
   top: 0px;
 }
 
 td {
-  font-size: 11px;
+  font-size: 10px;
   border-right: 1px solid #ddd;
   line-height: 1.2;
+  text-align: left;
 }
 
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
 
 
 

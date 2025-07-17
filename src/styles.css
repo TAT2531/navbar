@@ -5,13 +5,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* styles.css */
 .mat-mdc-table .mdc-data-table__row {
-  height: 28px !important;
-  min-height: 28px !important;
+  height: 30px !important;
+  min-height: 30px !important;
 }
 
 .mat-mdc-table .mdc-data-table__header-row {
-  height: 35px !important;
-  min-height: 35px !important;
+  height: 30px !important;
+  min-height: 30px !important;
 }
 
 .mat-mdc-table .mdc-data-table__cell, 
