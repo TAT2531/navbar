@@ -7,6 +7,8 @@ import { EmployeeDataService } from '../../services/employee-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeTableComponent } from '../../components/employee-table/employee-table.component';
 import { JoiningPipelineReportComponent } from '../../components/joining-pipeline-report/joining-pipeline-report.component';
+import { AttritionReportComponent } from '../../components/attrition-report/attrition-report.component';
+
 
 // Register Chart.js components
 Chart.register(
@@ -32,7 +34,7 @@ export class HrDashboardComponent {
   constructor(
     private dialog: MatDialog,
     private employeeService: EmployeeDataService
-  ) {}
+  ) { }
 
   openEmployeeTable() {
     this.dialog.open(EmployeeTableComponent, {
@@ -45,22 +47,23 @@ export class HrDashboardComponent {
     });
   }
 
- openJoiningPipelineReport() {
-  this.dialog.open(JoiningPipelineReportComponent, {
-    width: '1200px',
-    maxWidth: '95vw',
-    height: '80vh',
-    panelClass: 'joining-pipeline-dialog',
-    data: {
-      joiningPipelineData: this.getEnhancedPipelineData()
-    }
-  });
-}
+  openJoiningPipelineReport() {
+    this.dialog.open(JoiningPipelineReportComponent, {
+      width: '1200px',
+      maxWidth: '95vw',
+      height: '80vh',
+      panelClass: 'joining-pipeline-dialog',
+      data: {
+        joiningPipelineData: this.getEnhancedPipelineData()
+      }
+    });
+  }
 
-private getEnhancedPipelineData() {
-  return [
-    { 
-      name: 'Zara', email: 'elilta.meine@gmail.com', phone: '+1 202-666-8972', status: 'Pending', date: 'Apr 14, 2025' },
+  private getEnhancedPipelineData() {
+    return [
+      {
+        name: 'Zara', email: 'elilta.meine@gmail.com', phone: '+1 202-666-8972', status: 'Pending', date: 'Apr 14, 2025'
+      },
       { name: 'Janana ', email: 'juanmayan@mail.com', phone: '+1 650-866-0097', status: 'Pending', date: 'Apr 14, 2025' },
       { name: 'Suraba K', email: 'kual.crm@gmail.com', phone: '+1 469-753-0470', status: 'Pending', date: 'Apr 14, 2025' },
       { name: 'marone poretel', email: 'poreelhars@@gmail.com', phone: '+1 571-207-4145', status: 'Pending', date: 'Apr 14, 2025' },
@@ -68,10 +71,115 @@ private getEnhancedPipelineData() {
       { name: 'Smitha Pandey', email: 'smitha.handy@gmail.com', phone: '+91 432-534-5456', status: 'Pending', date: 'Apr 14, 2025' },
       { name: 'Santiago Tuzimelli', email: 'sandresputimelli@mailmaster.ca', phone: '+91 798-957-5533', status: 'Submitted', date: 'Feb 11, 2025' },
       { name: 'Savoy Pradep', email: 'savoyparibay@gmail.com', phone: '+91 987-678-9098', status: 'Pending', date: 'Feb 06, 2025' },
-      {name: 'Zara', email: 'elilta.meine@gmail.com', phone: '+1 202-666-8972', status: 'Pending', date: 'Apr 14, 2025' }
+      { name: 'Zara', email: 'elilta.meine@gmail.com', phone: '+1 202-666-8972', status: 'Pending', date: 'Apr 14, 2025' }
+
+    ];
+  }
+  openAttritionReport() {
+    this.dialog.open(AttritionReportComponent, {
+      width: '1200px',
+      maxWidth: '95vw',
+      height: '80vh',
+      data: {
+        attritionData: this.getAttritionData()
+      }
+    });
+  }
+
+  private getAttritionData() {
+    return [
+      {
+        name: 'Deepak Sharma',
+        jobTitle: 'Jina Developer',
+        department: 'Mayo Printed Limited',
+        email: 'deepa@gruni.com',
+        phone: '+91 366 430 4643',
+        employeeId: 'NICL1340191014058091',
+        contactDate: 'Feb 26, 2025'
+      },
       
-  ];
-}
+      {
+        name: 'Nikhil Saari',
+        jobTitle: 'Timeline',
+        department: 'Dexter Limited',
+        email: 'Nikhilsaari@gruni.com',
+        phone: '+91 366 480 4045',
+        employeeId: 'NICL134022052319399',
+        contactDate: 'Feb 26, 2025'
+      },
+
+      {
+        name: 'Deepak Sharma',
+        jobTitle: 'Jina Developer',
+        department: 'Mayo Printed Limited',
+        email: 'deepa@gruni.com',
+        phone: '+91 366 430 4643',
+        employeeId: 'NICL1340191014058091',
+        contactDate: 'Feb 26, 2025'
+      },
+      
+      {
+        name: 'Nikhil Saari',
+        jobTitle: 'Timeline',
+        department: 'Dexter Limited',
+        email: 'Nikhilsaari@gruni.com',
+        phone: '+91 366 480 4045',
+        employeeId: 'NICL134022052319399',
+        contactDate: 'Feb 26, 2025'
+      },
+
+      {
+        name: 'Deepak Sharma',
+        jobTitle: 'Jina Developer',
+        department: 'Mayo Printed Limited',
+        email: 'deepa@gruni.com',
+        phone: '+91 366 430 4643',
+        employeeId: 'NICL1340191014058091',
+        contactDate: 'Feb 26, 2025'
+      },
+      
+      {
+        name: 'Nikhil Saari',
+        jobTitle: 'Timeline',
+        department: 'Dexter Limited',
+        email: 'Nikhilsaari@gruni.com',
+        phone: '+91 366 480 4045',
+        employeeId: 'NICL134022052319399',
+        contactDate: 'Feb 26, 2025'
+      },
+
+      {
+        name: 'Deepak Sharma',
+        jobTitle: 'Jina Developer',
+        department: 'Mayo Printed Limited',
+        email: 'deepa@gruni.com',
+        phone: '+91 366 430 4643',
+        employeeId: 'NICL1340191014058091',
+        contactDate: 'Feb 26, 2025'
+      },
+      
+      {
+        name: 'Nikhil Saari',
+        jobTitle: 'Timeline',
+        department: 'Dexter Limited',
+        email: 'Nikhilsaari@gruni.com',
+        phone: '+91 366 480 4045',
+        employeeId: 'NICL134022052319399',
+        contactDate: 'Feb 26, 2025'
+      },
+
+      {
+        name: 'Nikhil Saari',
+        jobTitle: 'Timeline',
+        department: 'Dexter Limited',
+        email: 'Nikhilsaari@gruni.com',
+        phone: '+91 366 480 4045',
+        employeeId: 'NICL134022052319399',
+        contactDate: 'Feb 26, 2025'
+      }
+      
+    ];
+  }
 
   // Card 1: Employee Count By Country
   countryChart = {
@@ -92,10 +200,10 @@ private getEnhancedPipelineData() {
         legend: {
           position: 'right' as const,
           align: 'start' as const,
-          labels: { 
-            boxWidth: 12, 
-            padding: 15, 
-            font: { size: 10 } 
+          labels: {
+            boxWidth: 12,
+            padding: 15,
+            font: { size: 10 }
           }
         }
       }
@@ -110,7 +218,7 @@ private getEnhancedPipelineData() {
       datasets: [{
         data: [156, 377, 3, 38, 15, 40, 27],
         backgroundColor: [
-          '#5c8fe3', '#4BC0C0', '#FFCE56', 
+          '#5c8fe3', '#4BC0C0', '#FFCE56',
           '#FF6384', '#9966FF', '#36A2EB', '#FF9F40'
         ],
         borderColor: '#fff',
@@ -276,7 +384,7 @@ private getEnhancedPipelineData() {
             font: {
               weight: 'bold' as const
             }
-          }, 
+          },
         },
         x: {
           grid: {
@@ -427,11 +535,11 @@ private getEnhancedPipelineData() {
       plugins: {
         legend: {
           position: 'right' as const,
-          align: 'start' as const,   
-          labels: { 
-            boxWidth: 10, 
-            padding: 5, 
-            font: { size: 8 } 
+          align: 'start' as const,
+          labels: {
+            boxWidth: 10,
+            padding: 5,
+            font: { size: 8 }
           }
         }
       }

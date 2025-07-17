@@ -1,0 +1,64 @@
+<div class="report-container">
+    <div class="head">
+        <div class="report-header">
+            <h2>Attrition Employees Report</h2>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search..."><button mat-icon-button class="close-button"
+                (click)="closeDialog()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="table-container">
+        <table mat-table [dataSource]="data.attritionData" class="bordered-table">
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Employee Name</th>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+
+            <!-- Job Title Column -->
+            <ng-container matColumnDef="jobTitle">
+                <th mat-header-cell *matHeaderCellDef>Job Title</th>
+                <td mat-cell *matCellDef="let element">{{element.jobTitle || '-'}}</td>
+            </ng-container>
+
+            <!-- Department Column -->
+            <ng-container matColumnDef="department">
+                <th mat-header-cell *matHeaderCellDef>Department</th>
+                <td mat-cell *matCellDef="let element">{{element.department}}</td>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email Id</th>
+                <td mat-cell *matCellDef="let element">{{element.email}}</td>
+            </ng-container>
+
+            <!-- Phone Column -->
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef>Contact Number</th>
+                <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+            </ng-container>
+
+            <!-- Employee ID Column -->
+            <ng-container matColumnDef="employeeId">
+                <th mat-header-cell *matHeaderCellDef>Employee ID</th>
+                <td mat-cell *matCellDef="let element">{{element.employeeId}}</td>
+            </ng-container>
+
+            <!-- Contact Date Column -->
+            <ng-container matColumnDef="contactDate">
+                <th mat-header-cell *matHeaderCellDef>Created Date</th>
+                <td mat-cell *matCellDef="let element">{{element.contactDate}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
