@@ -209,20 +209,20 @@ th {
 }
 
 /* Add to your existing styles */
-.country-list-container {
+.status-list-container {
   padding: 15px;
   /* background-color: #f8f9fa; */
   border-radius: 8px;
   margin-top: 10px;
 }
 
-.country-list {
+.status-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.country-list li {
+.status-list li {
   padding: 8px 0;
   font-size: 16px;
   color: #2d3748;
