@@ -54,7 +54,7 @@ export class NavbarComponent {
       this.router.navigate(['/dashboards/employee'], { 
         queryParams: { name: this.employeeName.trim() } 
       });
-      this.closeEmployeeDashboardModal();
+      // this.closeEmployeeDashboardModal();
     }
   }
 
