@@ -1,183 +1,96 @@
 <div class="dashboard-container">
   <h1>HR Recruitment Dashboard</h1>
-  
+
   <!-- Small Cards Row -->
   <div class="small-cards-row">
     <div class="small-card">
-      <h3>Total Applicants</h3>
       <div class="card-value">120</div>
+      <h5>Total Applicants 🛈</h5>
     </div>
-    
+
     <div class="small-card">
-      <h3>Open Positions</h3>
       <div class="card-value">15</div>
+      <h5>Open Positions 🛈</h5>
     </div>
-    
+
     <div class="small-card">
-      <h3>Shortlisted</h3>
       <div class="card-value">42</div>
+      <h5>Shortlisted 🛈</h5>
     </div>
-    
+
     <div class="small-card">
-      <h3>Hired</h3>
       <div class="card-value">8</div>
+      <h5>Hired 🛈</h5>
     </div>
   </div>
-  
+
   <!-- Big Cards Grid -->
   <div class="big-cards-grid">
     <div class="big-card">
-      <h3>Open Positions by Country</h3>
+      <h4>Open Positions by Country <span class="info-icon" title="Number of open positions by country">🛈</span></h4>
       <div class="chart-container">
+        <div>
+          <canvas id="positionsByCountryChart"></canvas>
+        </div>
+        <div class="chart-legend">
+          <div style="font-size: 10px;">
+            <span class="legend-color" style="background-color: #FF6384;"></span> Canada - 5 <br>
+            <span class="legend-color" style="background-color: #36A2EB;"></span> USA - 2<br>
+            <span class="legend-color" style="background-color: #FFCE56;"></span> India - 5
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="big-card">
+      <h4>Open Positions by Month-wise <span class="info-icon" title="Number of open positions by month">🛈</span></h4>
+      <div class="chart-container">
+        <canvas id="positionsByMonthChart"></canvas>
+      </div>
+    </div>
+
+    <div class="big-card">
+      <h4>Applications Received by Country <span class="info-icon"
+          title="Number of applications received by country">🛈</span></h4>
+      <div class="chart-container">
+        <canvas id="applicationsByCountryChart"></canvas>
+      </div>
+    </div>
+
+    <div class="big-card">
+      <h4>Applications Received by Month wise <span class="info-icon"
+          title="Monthly application counts with 0.1 precision">🛈</span></h4>
+      <div class="chart-container">
+        <canvas id="applicationsByMonthChart"></canvas>
+      </div>
+    </div>
+
+    <div class="big-card">
+      <h4>Applications Received by Source <span class="info-icon"
+          title="Application sources with positive/negative trends">🛈</span></h4>
+      <div class="chart-container">
+        <canvas id="applicationsBySourceChart"></canvas>
+      </div>
+    </div>
+
+    <div class="big-card">
+      <h4>Open Positions by Country</h4>
+      <div class="country-list-container">
         <ul class="country-list">
-          <li>USA - 5</li>
-          <li>India - 7</li>
-          <li>UK - 2</li>
-          <li>Canada - 1</li>
+          <li>Applied</li>
+          <li>Interviwed</li>
+          <li>Hired</li>
+          <li>Rejected</li>
+          <li>Shortlisted</li>
+          
         </ul>
       </div>
     </div>
-    
-    <div class="big-card">
-      <h3>Shortlisted Candidates</h3>
-      <div class="chart-container">
-        <table>
-          <tr>
-            <th>Month</th>
-            <th>Count</th>
-          </tr>
-          <tr>
-            <td>Jan</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>Feb</td>
-            <td>12</td>
-          </tr>
-          <tr>
-            <td>Mar</td>
-            <td>22</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    
-    <div class="big-card">
-      <h3>Applications Received by Country</h3>
-      <div class="chart-container">
-        <table>
-          <tr>
-            <th>Country</th>
-            <th>Applications</th>
-          </tr>
-          <tr>
-            <td>USA</td>
-            <td>45</td>
-          </tr>
-          <tr>
-            <td>India</td>
-            <td>60</td>
-          </tr>
-          <tr>
-            <td>UK</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>Canada</td>
-            <td>5</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    
-    <div class="big-card">
-      <h3>Applications Received Month-wise</h3>
-      <div class="chart-container">
-        <table>
-          <tr>
-            <th>Month</th>
-            <th>Applications</th>
-          </tr>
-          <tr>
-            <td>Jan</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>Feb</td>
-            <td>35</td>
-          </tr>
-          <tr>
-            <td>Mar</td>
-            <td>60</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    
-    <div class="big-card">
-      <h3>Application Sources</h3>
-      <div class="chart-container">
-        <table>
-          <tr>
-            <th>Source</th>
-            <th>Count</th>
-          </tr>
-          <tr>
-            <td>Job Boards</td>
-            <td>70</td>
-          </tr>
-          <tr>
-            <td>Referrals</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>Direct</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>Other</td>
-            <td>10</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    
-    <div class="big-card">
-      <h3>Recruitment Status</h3>
-      <div class="chart-container">
-        <table>
-          <tr>
-            <th>Status</th>
-            <th>Count</th>
-          </tr>
-          <tr>
-            <td>Applied</td>
-            <td>120</td>
-          </tr>
-          <tr>
-            <td>Screened</td>
-            <td>80</td>
-          </tr>
-          <tr>
-            <td>Interviewed</td>
-            <td>42</td>
-          </tr>
-          <tr>
-            <td>Offered</td>
-            <td>15</td>
-          </tr>
-          <tr>
-            <td>Hired</td>
-            <td>8</td>
-          </tr>
-        </table>
-      </div>
-    </div>
   </div>
-  
+
   <!-- Applicant Details Table -->
   <div class="applicant-table">
-    <h3>Applicant Details</h3>
+    <h4>Applicant Details</h4>
     <table>
       <thead>
         <tr>
