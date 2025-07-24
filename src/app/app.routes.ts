@@ -3,6 +3,7 @@ import { EmployeeDashboardComponent } from './dashboards/employee-dashboard/empl
 import { HrDashboardComponent } from './dashboards/hr-dashboard/hr-dashboard.component';
 import { HrRecruitmentDashboardComponent } from './dashboards/hr-recruitment-dashboard/hr-recruitment-dashboard.component';
 import { InvoiceDashboardComponent } from './dashboards/invoice-dashboard/invoice-dashboard.component';
+import { TaskBoardDashboardComponent } from '../app/dashboards/task-board-dashboard/task-board-dashboard.component';
 
 
 export const routes: Routes = [
@@ -21,8 +22,13 @@ export const routes: Routes = [
     },
 
     {
-        path: 'dashboards/invoice', 
-    component: InvoiceDashboardComponent,
-    data: { title: 'Invoice Dashboard' }
+        path: 'dashboards/invoice',
+        component: InvoiceDashboardComponent,
+        data: { title: 'Invoice Dashboard' }
+    },
+
+    {
+        path: 'dashboards/task-board',
+        component: TaskBoardDashboardComponent
     }
 ];
