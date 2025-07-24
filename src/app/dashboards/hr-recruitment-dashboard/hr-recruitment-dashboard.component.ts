@@ -82,7 +82,7 @@ export class HrRecruitmentDashboardComponent implements AfterViewInit {
           y: {
             beginAtZero: true,
             min: 2,
-            max: 12, // Sets upper limit to show above highest bar (10)
+            max: 12,
             title: {
               display: true,
               text: 'Number of Positions',
@@ -118,7 +118,7 @@ export class HrRecruitmentDashboardComponent implements AfterViewInit {
               }
             }
           },
-          // This plugin displays values on top of bars
+          
           datalabels: {
             anchor: 'end',
             align: 'top',

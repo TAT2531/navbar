@@ -1,6 +1,3 @@
-
-
-
 <div class="invoice-dashboard">
   <!-- Header and Filters -->
   <div class="dashboard-header">
@@ -10,7 +7,7 @@
         <div class="filter-group">
           <label>Period</label>
           <select>
-            <option>All</option>
+            <option>12 Months</option>
           </select>
         </div>
         <div class="filter-group">
@@ -38,7 +35,10 @@
             <option>All</option>
           </select>
         </div>
-        <button class="clear-btn">Clear</button>
+        <div class="filter-group">
+          <label for="text" style="color: red;">Please select any one field</label>
+          <button class="clear-btn">Clear</button>
+        </div>
       </div>
     </div>
   </div>
@@ -49,69 +49,59 @@
     <div class="left-content">
       <!-- Big Card -->
       <div class="big-card">
-        <h2>Invoice Summary</h2>
-        <div class="summary-items">
-          <div class="summary-item">
-            <span>Included Amount</span>
-            <strong>140/568</strong>
+        <div class="summary-circles">
+          <div class="summary-circle sky-blue">
+            <div class="circle-content">
+              <div class="circle-label">Invoiced Amount - 1469588</div>
+            </div>
           </div>
-          <div class="summary-item">
-            <span>Over Due Amount</span>
-            <strong>140/568</strong>
+          <div class="summary-circle orange">
+            <div class="circle-content">
+              <div class="circle-label">Over Due Amount - 1469588</div>
+            </div>
           </div>
-          <div class="summary-item">
-            <span>Paid Amount</span>
-            <strong>0</strong>
+          <div class="summary-circle white-green">
+            <div class="circle-content">
+              <div class="circle-label">Paid Amount - 0</div>
+            </div>
+          </div>
+          <div class="summary-circle crimson">
+            <div class="circle-content">
+              <div class="circle-label">Unpaid Amount - 1469588</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- First Two Medium Cards -->
       <div class="medium-cards">
-        <div class="medium-card">
-          <h3>Outstanding Invoices Based on Departments</h3>
-          <div class="data-list">
-            <div>10</div>
-            <div>15</div>
-            <div>20</div>
-            <div>25</div>
-            <div>30</div>
-            <div>35</div>
-            <div>40</div>
-            <div>45</div>
-            <div>50</div>
+        <div class="chart-container">
+          <h3>Outstanding Invoices Based on Departments 🛈</h3>
+          <div class="chart-wrapper">
+            <canvas id="departmentChart"></canvas>
           </div>
         </div>
-        <div class="medium-card">
-          <h3>Outstanding Invoices Based on Invoice Type</h3>
-          <div class="data-list">
-            <div>Monday: 2</div>
-            <div>commencing: 2</div>
-            <div>endow: 2</div>
+        <div class="chart-container">
+          <h3>Outstanding Invoices Based on Invoice Type 🛈</h3>
+          <div class="chart-wrapper">
+            <canvas id="invoiceTypeChart"></canvas>
           </div>
         </div>
       </div>
 
       <!-- Second Two Medium Cards -->
-      <div class="medium-cards">
-        <div class="medium-card">
-          <h3>Monthly Outstanding Invoices Data</h3>
-          <div class="data-list">
-            <div>6000000</div>
-            <div>1000000</div>
-            <div>2000000</div>
-            <div>4000000</div>
-            <div>3000000</div>
-            <div>0</div>
+      <div class="medium-cards-2">
+        <div class="chart-container">
+          <h3>Month Wise Outstanding Invoices Data 🛈</h3>
+          <div class="chart-wrapper">
+            <canvas id="outstandingInvoicesChart"></canvas>
           </div>
         </div>
-        <div class="medium-card">
-          <h3>Expenses Amount By Status</h3>
-          <div class="data-list">
-            <div>August</div>
-            <div>November</div>
-            <div>December</div>
-            <div>January</div>
+
+        <div class="chart-container">
+          <h3>Expenses Amount By Status 🛈</h3>
+          <div class="chart-wrapper">
+            <canvas id="expensesByStatusChart"></canvas>
           </div>
         </div>
       </div>
@@ -120,60 +110,57 @@
     <!-- Right Side - Small Cards -->
     <div class="right-content">
       <div class="small-card">
-        <h4>Submitted Expenses</h4>
-        <div class="value">13</div>
+        <div class="value">1</div>
+        <h4>Partially Cleared Invoices</h4>
       </div>
       <div class="small-card">
-        <h4>Approved Expenses</h4>
-        <div class="value">9</div>
-      </div>
-      <div class="small-card">
-        <h4>Rejected Expenses</h4>
-        <div class="value">4</div>
-      </div>
-      <div class="small-card">
-        <h4>Invoiced Expenses</h4>
-        <div class="value">0</div>
-      </div>
-      <div class="small-card">
-        <h4>Partially Cleaned</h4>
-        <div class="value">-</div>
-      </div>
-      <div class="small-card">
+        <div class="value">6</div>
         <h4>Open Invoices</h4>
-        <div class="value">-</div>
       </div>
       <div class="small-card">
-        <h4>Cased Invoices</h4>
-        <div class="value">-</div>
+        <div class="value">0</div>
+        <h4>Closed Invoices</h4>
+      </div>
+      <div class="small-card">
+
+        <div class="value">13</div>
+        <h4>Submitted Expenses</h4>
+      </div>
+      <div class="small-card">
+
+        <div class="value">9</div>
+        <h4>Approved Expenses</h4>
+      </div>
+      <div class="small-card">
+
+        <div class="value">4</div>
+        <h4>Rejected Expenses</h4>
+      </div>
+      <div class="small-card">
+
+        <div class="value">0</div>
+        <h4>Invoiced</h4>
       </div>
     </div>
   </div>
 
-  
-<!-- Footer -->
-<footer class="dashboard-footer">
-  <div class="footer-top">
-    <div class="footer-section">
-      <div class="footer-option">Conflicts: Non</div>
-      <div class="footer-option">Departments</div>
-      <div class="footer-option">Major Private Limited</div>
-      <div class="footer-option">Submitted Expenses</div>
-      <div class="footer-option">Approved Expenses</div>
-      <div class="footer-option">Rejected Expenses</div>
-      <div class="footer-option">Invoiced Expenses</div>
-    </div>
-    <div class="footer-section">
-      <div class="employee-filter">
-        <label>Employee Filter</label>
-        <select>
-          <option>All Employees</option>
-          <option>John Doe</option>
-          <option>Jane Smith</option>
-          <option>Michael Johnson</option>
-        </select>
+
+  <!-- Footer -->
+  <footer class="dashboard-footer">
+    <h4>Invoices</h4>
+    <div class="footer-top">
+      <div class="footer-section">
+        <div class="footer-option">Timebased Invoice</div>
+        <div class="footer-option">View/Generate</div>
+        <div class="footer-option">Open Invoice</div>
+        <div class="footer-option">Closed Invoice</div>
+        <div class="footer-option">Expenses Invoices</div>
+        <div class="footer-option">Expenses Invoices History</div>
+      </div>
+      <div class="search">
+        <span>🔍<span style="color: blue;">🃲</span>👤</span>
       </div>
     </div>
-  </div>
-</footer>
+
+  </footer>
 </div>
