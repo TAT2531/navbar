@@ -1,41 +1,38 @@
-<!-- src/app/components/dashboards/task-board-dashboard/task-board-dashboard.component.html -->
 <div class="task-board-dashboard">
-  <!-- ... (keep the header and filters section the same) ... -->
-   <div class="dashboard-header">
+  <div class="dashboard-header">
     <h2>Task Board Dashboard</h2>
     <div class="filters">
       <div class="filter-group">
         <label>Board Name</label>
         <select [(ngModel)]="boardName">
           <option value="All">All</option>
-          <option value="Development">Development</option>
-          <option value="Testing">Testing</option>
-          <option value="Design">Design</option>
         </select>
       </div>
-      
+
       <div class="filter-group">
         <label>Project</label>
         <select [(ngModel)]="project">
           <option value="All">All</option>
-          <option value="Project Alpha">Project Alpha</option>
-          <option value="Project Beta">Project Beta</option>
-          <option value="Project Gamma">Project Gamma</option>
         </select>
       </div>
-      
+
       <div class="filter-group">
         <label>Start Date</label>
-        <input type="text" [(ngModel)]="startDate">
+        <input type="date">
       </div>
-      
+
       <div class="filter-group">
         <label>End Date</label>
-        <input type="text" [(ngModel)]="endDate">
+        <input type="date">
       </div>
-      
-      <button class="btn fetch" (click)="fetchData()">Fetch</button>
-      <button class="btn clear" (click)="clearFilters()">Clear</button>
+
+      <div class="filter-group">
+        <p>Please Select any one field</p>
+        <div>
+          <button class="btn fetch" (click)="fetchData()">Fetch</button>
+          <button class="btn clear" (click)="clearFilters()">Clear</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -51,37 +48,28 @@
   <div class="cards-container medium-cards">
     <div class="card medium" *ngFor="let card of mediumCards">
       <h3>{{card.title}}</h3>
-      
+
       <!-- Priority Chart -->
-      <div *ngIf="card.type === 'priority'" class="priority-chart">
-        <div *ngFor="let item of card.data" class="priority-item">
-          <div class="priority-color" [style.background-color]="item.color"></div>
-          <span>{{item.priority}}: {{item.count}}</span>
-        </div>
+      <div>
+
       </div>
-      
+
       <!-- Hours Data -->
       <div *ngIf="card.type === 'hours'" class="hours-data">
         <div class="hours-item">
-          <span>Estimated Hours:</span>
-          <span>{{card.data.estimated}}</span>
+          <div class="indicator estimated"></div>
+          <span>Estimated Hours</span>
         </div>
         <div class="hours-item">
-          <span>Actual Hours:</span>
-          <span>{{card.data.actual}}</span>
+          <div class="indicator actual"></div>
+          <span>Actual Hours</span>
         </div>
       </div>
-      
+
       <!-- Project Tasks -->
       <div *ngIf="card.type === 'projectTasks'" class="project-tasks">
-        <div *ngFor="let item of card.data" class="project-item">
-          <div class="project-name">{{item.project}}</div>
-          <div class="project-progress">
-            <span>{{item.completed}}/{{item.total}}</span>
-            <div class="progress-bar">
-              <div class="progress" [style.width]="(item.completed / item.total) * 100 + '%'"></div>
-            </div>
-          </div>
+        <div class="empty-card">
+          <div class="empty-message"></div>
         </div>
       </div>
     </div>
@@ -89,50 +77,82 @@
 
   <!-- Large Cards -->
   <div class="cards-container large-cards">
+    <!-- Task Progress Card -->
     <div class="card large" *ngFor="let card of largeCards">
       <h3>{{card.title}}</h3>
-      
-      <!-- Hours Chart -->
-      <div *ngIf="card.type === 'hoursChart'" class="hours-chart">
-        <table>
-          <thead>
-            <tr>
-              <th *ngFor="let item of card.data">{{item.week}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td *ngFor="let item of card.data">
-                <div class="planned-bar" [style.height]="item.planned + 'px'"></div>
-                <div class="utilized-bar" [style.height]="item.utilized + 'px'"></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="legend">
-          <div class="legend-item">
-            <div class="legend-color planned"></div>
-            <span>Planned</span>
+
+      <!-- Task Progress Card -->
+<!-- Task Progress Card -->
+<div *ngIf="card.type === 'taskProgress'" class="task-progress-chart">
+  <h3>{{card.title}}</h3>
+  <div class="chart-container">
+    <div class="y-axis">
+      <div *ngFor="let tick of getTicks(1, 0.1)" class="y-tick">
+        <span class="tick-label">{{tick.toFixed(1)}}</span>
+        <div class="tick-line"></div>
+      </div>
+    </div>
+    <div class="bars-container">
+      <div *ngFor="let item of card.data; let i = index" class="bar-group">
+        <div class="bars">
+          <div class="planned-bar" [style.height]="item.planned * 100 + '%'">
+            <span class="bar-value">{{item.planned.toFixed(1)}}</span>
           </div>
-          <div class="legend-item">
-            <div class="legend-color utilized"></div>
-            <span>Utilized</span>
+          <div class="completed-bar" [style.height]="item.completed * 100 + '%'">
+            <span class="bar-value">{{item.completed.toFixed(1)}}</span>
           </div>
         </div>
       </div>
-      
-      <!-- Project Progress -->
-      <div *ngIf="card.type === 'projectProgress'" class="project-progress-chart">
-        <div *ngFor="let item of card.data" class="project-progress-item">
-          <div class="project-name">{{item.name}}</div>
-          <div class="progress-container">
-            <div class="progress-bar">
-              <div class="progress" [style.width]="item.progress + '%'" [style.background-color]="item.color"></div>
-            </div>
-            <span class="progress-value">{{item.progress}}%</span>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color planned"></div>
+      <span>Planned Tasks</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color completed"></div>
+      <span>Completed Tasks</span>
+    </div>
+  </div>
+</div>
+
+      <!-- Hours Chart Card -->
+      <!-- Hours Chart Card -->
+<div *ngIf="card.type === 'hoursChart'" class="hours-chart">
+  <h3>{{card.title}}</h3>
+  <div class="chart-container">
+    <div class="y-axis">
+      <div *ngFor="let tick of getTicks(80, 10)" class="y-tick">
+        <span class="tick-label">{{tick}}</span>
+        <div class="tick-line"></div>
+      </div>
+    </div>
+    <div class="bars-container">
+      <div *ngFor="let item of card.data" class="bar-group">
+        <div class="bars">
+          <div class="planned-bar" [style.height]="item.planned + 'px'">
+            <span class="bar-value">{{item.planned}}</span>
+          </div>
+          <div class="utilized-bar" [style.height]="item.utilized + 'px'">
+            <span class="bar-value">{{item.utilized}}</span>
           </div>
         </div>
+        <div class="week-label">{{item.week}}</div>
       </div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color planned"></div>
+      <span>Planned Hours</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color utilized"></div>
+      <span>Utilized Hours</span>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>
