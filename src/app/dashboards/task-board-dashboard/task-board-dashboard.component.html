@@ -77,82 +77,79 @@
 
   <!-- Large Cards -->
   <div class="cards-container large-cards">
-    <!-- Task Progress Card -->
     <div class="card large" *ngFor="let card of largeCards">
       <h3>{{card.title}}</h3>
 
       <!-- Task Progress Card -->
-<!-- Task Progress Card -->
-<div *ngIf="card.type === 'taskProgress'" class="task-progress-chart">
-  <h3>{{card.title}}</h3>
-  <div class="chart-container">
-    <div class="y-axis">
-      <div *ngFor="let tick of getTicks(1, 0.1)" class="y-tick">
-        <span class="tick-label">{{tick.toFixed(1)}}</span>
-        <div class="tick-line"></div>
-      </div>
-    </div>
-    <div class="bars-container">
-      <div *ngFor="let item of card.data; let i = index" class="bar-group">
-        <div class="bars">
-          <div class="planned-bar" [style.height]="item.planned * 100 + '%'">
-            <span class="bar-value">{{item.planned.toFixed(1)}}</span>
+      <div *ngIf="card.type === 'taskProgress'" class="task-progress-chart">
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color planned"></div>
+            <span>Planned Tasks</span>
           </div>
-          <div class="completed-bar" [style.height]="item.completed * 100 + '%'">
-            <span class="bar-value">{{item.completed.toFixed(1)}}</span>
+          <div class="legend-item">
+            <div class="legend-color completed"></div>
+            <span>Completed Tasks</span>
           </div>
         </div>
+        <div class="chart-container">
+          <div class="y-axis">
+            <div *ngFor="let tick of getTicks(1, 0.1)" class="y-tick">
+              <span class="tick-label">{{tick.toFixed(1)}}</span>
+              <div class="tick-line"></div>
+            </div>
+          </div>
+          <div class="bars-container">
+            <div *ngFor="let item of card.data; let i = index" class="bar-group">
+              <div class="bars">
+                <div class="planned-bar" [style.height]="item.planned * 100 + '%'">
+                  <span class="bar-value">{{item.planned.toFixed(1)}}</span>
+                </div>
+                <div class="completed-bar" [style.height]="item.completed * 100 + '%'">
+                  <span class="bar-value">{{item.completed.toFixed(1)}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="x-axis">Projects</div>
       </div>
-    </div>
-  </div>
-  <div class="legend">
-    <div class="legend-item">
-      <div class="legend-color planned"></div>
-      <span>Planned Tasks</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color completed"></div>
-      <span>Completed Tasks</span>
-    </div>
-  </div>
-</div>
 
       <!-- Hours Chart Card -->
-      <!-- Hours Chart Card -->
-<div *ngIf="card.type === 'hoursChart'" class="hours-chart">
-  <h3>{{card.title}}</h3>
-  <div class="chart-container">
-    <div class="y-axis">
-      <div *ngFor="let tick of getTicks(80, 10)" class="y-tick">
-        <span class="tick-label">{{tick}}</span>
-        <div class="tick-line"></div>
-      </div>
-    </div>
-    <div class="bars-container">
-      <div *ngFor="let item of card.data" class="bar-group">
-        <div class="bars">
-          <div class="planned-bar" [style.height]="item.planned + 'px'">
-            <span class="bar-value">{{item.planned}}</span>
+      <div *ngIf="card.type === 'hoursChart'" class="hours-chart">
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color-2 estimated"></div>
+            <span>Estimated Hours</span>
           </div>
-          <div class="utilized-bar" [style.height]="item.utilized + 'px'">
-            <span class="bar-value">{{item.utilized}}</span>
+          <div class="legend-item">
+            <div class="legend-color-2 actual"></div>
+            <span>Actual Hours</span>
           </div>
         </div>
-        <div class="week-label">{{item.week}}</div>
+        <div class="chart-container">
+          <div class="y-axis nums">
+            <div *ngFor="let tick of getTicks(60, 10)" class="y-tick">
+              <span class="tick-label">{{tick}}</span>
+              <div class="tick-line"></div>
+            </div>
+          </div>
+          <div class="bars-container">
+            <div *ngFor="let item of card.data" class="bar-group">
+              <div class="bars">
+                <div class="planned-bar" [style.height]="item.planned + 'px'">
+                  <span class="bar-value">{{item.planned}}</span>
+                </div>
+                <div class="utilized-bar" [style.height]="item.utilized + 'px'">
+                  <span class="bar-value">{{item.utilized}}</span>
+                </div>
+              </div>
+              <div class="week-label">{{item.week}}</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="num zero">0</span> <span class="num one">1</span><span class="num two">2</span><span class="num three">3</span><span class="num four">4</span><span class="num five">5</span><span class="num six">6</span><span class="num seven">7</span><span class="num eight">8</span><span class="num nine">9</span><span class="num ten">10</span></div>
       </div>
-    </div>
-  </div>
-  <div class="legend">
-    <div class="legend-item">
-      <div class="legend-color planned"></div>
-      <span>Planned Hours</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color utilized"></div>
-      <span>Utilized Hours</span>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 </div>

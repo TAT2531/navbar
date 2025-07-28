@@ -22,7 +22,7 @@ interface TaskProgressData {
 }
 
 interface HoursChartData {
-  week: string;  // Added week property
+  week: string;  
   planned: number;
   utilized: number;
 }
@@ -95,21 +95,14 @@ largeCards: LargeCardData[] = [
     type: 'taskProgress',
     title: 'Outstanding Task Based on Project',
     data: [
-      { planned: 0.8, completed: 0.6 },
-      { planned: 0.6, completed: 0.4 },
-      { planned: 0.4, completed: 0.3 },
-      { planned: 0.3, completed: 0.2 }
+      { planned: 0, completed: 0 }
     ]
   },
   {
     type: 'hoursChart',
     title: 'Planned hours vs Utilized Hours',
     data: [
-      { week: '0.1', planned: 80, utilized: 70 },
-      { week: '0.2', planned: 70, utilized: 60 },
-      { week: '0.3', planned: 60, utilized: 50 },
-      { week: '0.4', planned: 50, utilized: 45 },
-      { week: '0.5', planned: 45, utilized: 40 }
+      { week: '0', planned: 0, utilized: 0 }
     ]
   }
 ];
